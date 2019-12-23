@@ -3,7 +3,7 @@ from kivy.lang import Builder
 
 
 class Progress(BoxLayout):
-    Builder.load_file(r'contents\progress\progress.kv')
+    Builder.load_file(r'contents/progress/progress.kv')
 
 
 ProgressBox = Progress()

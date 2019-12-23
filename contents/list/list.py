@@ -23,7 +23,7 @@ class List(BoxLayout):
     """This class make main object (box, which will be placed in a box of Carousel) of mini-application 'List'.
     """
 
-    Builder.load_file(r'contents\list\list.kv')
+    Builder.load_file(r'contents/list/list.kv')
 
     def __init__(self, **kwargs):
         super(List, self).__init__(**kwargs)
