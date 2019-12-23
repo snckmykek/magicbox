@@ -1,0 +1,43 @@
+<List>:
+    Screen:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.5, 'top': 1}
+            ScrollView:
+                do_scroll_x: False
+                scroll_distance: 10
+                scroll_timeout: 50
+                GridLayout:
+                    id: list_of_products_lists
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+        Button:
+            pos_hint: {'center_x': 0.80, 'top': 0.3}
+            size_hint: (None, None)
+            text: 'Add'
+            on_press: root.open_AddList()
+            height: 50
+            width: 50
+
+<AddList>:
+    size_hint: .8, .4
+    title: 'Auth'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .8, 1
+        Widget:
+        TextInput:
+            id: listname
+            color: (0, 0, 0, 1)
+            height: 40
+            on_touch_down: if self.text == 'Some list': self.text = ''
+            text: 'Some list'
+            size_hint_y: None
+        Button:
+            height: 40
+            on_press: root.add_list(listname.text)
+            text: 'Add'
+            size_hint_y: None
+        Widget:

@@ -1,0 +1,151 @@
+<ProductsListRepresentation>:
+    orientation: 'horizontal'
+    height: 80
+    size_hint_y: None
+    Label:
+        size_hint_x: .7
+        id: representation
+        background_color: (.92, .91, .92, 1)
+        background_normal: ''
+        color: (0, 0, 0, 1)
+    Label:
+        size_hint_x: .3
+        text: 'list_box'
+        color: (0,0,0,1)
+
+<ProductsList>:
+    size_hint: (1, 1)
+    background: ''
+    background_color: (1, 1, 1, 1)
+    Screen:
+        orientation: 'vertical'
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'top': 1}
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint_y: .08
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: (.03, .67, .14, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    color: (0, 0, 0, 1)
+                    text: 'Products'
+            ScrollView:
+                size_hint_y:.86
+                do_scroll_x: False
+                GridLayout:
+                    id: products_list
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+            BoxLayout:
+                size_hint_y: .06
+                Button:
+                    on_press: root.dismiss()
+                    text: 'Back to Lists'
+        Button:
+            text: 'Add'
+            height: 50
+            width: 50
+            pos_hint: {'center_x': 0.80, 'top': 0.3}
+            size_hint: (None, None)
+            on_press: root.open_all_products_list()
+
+
+<ProductRepresentation>:
+    orientation: 'horizontal'
+    height: 50
+    size_hint_y: None
+    Label:
+        id: representation
+        size_hint_x: .65
+        background_color: (.92, .91, .92, 1)
+        background_normal: ''
+        color: (0, 0, 0, 1)
+    Label:
+        id: user
+        size_hint_x: .2
+        text: 'product'
+        color: (0,0,0,1)
+    CheckBox:
+        id: bought
+        size_hint_x: .15
+        on_active: root.update_record_bd(True)
+
+<AllProductsList>:
+    size_hint: 1, 1
+    background: ''
+    background_color: (1, 1, 1, 1)
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .06
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: (.03, .67, .14, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                color: (0, 0, 0, 1)
+                text: 'All products'
+        BoxLayout:
+            size_hint_y: .06
+            TextInput:
+                id: search
+                color: (0, 0, 0, 1)
+                text: 'Start typing the product name'
+                on_text: root.update_sort()
+                on_focus: if self.text == 'Start typing the product name': self.text = ''
+        BoxLayout:
+            size_hint_y: .06
+            Button:
+                id: popular_sorting
+                text: 'Popular'
+                on_press: root.update_sort('popular')
+            Button:
+                id: last_sorting
+                text: 'Last'
+                on_press: root.update_sort('last')
+            Button:
+                id: abc_sorting
+                text: 'Abc'
+                on_press: root.update_sort('abc')
+        ScrollView:
+            size_hint_y: .76
+            do_scroll_x: False
+            effect_cls: 'DampedScrollEffect'
+            on_touch_up: if self.effect_y.overscroll > 50: root.show_more_products()
+            GridLayout:
+                id: all_products_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+        BoxLayout:
+            size_hint_y: .06
+            Button:
+                on_press: root.dismiss()
+                text: 'Complete'
+
+<AllProductRepresentation>:
+    orientation: 'horizontal'
+    height: 50
+    size_hint_y: None
+    Label:
+        id: representation
+        size_hint_x: .65
+        background_color: (.92, .91, .92, 1)
+        background_normal: ''
+        color: (0, 0, 0, 1)
+    Label:
+        id: units
+        size_hint_x: .2
+        text: 'all_product'
+        color: (0,0,0,1)
+    CheckBox:
+        id: selected
+        size_hint_x: .15
+        on_active: root.update_record_bd()
