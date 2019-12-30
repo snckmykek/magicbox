@@ -6,7 +6,7 @@ from sqlite_requests import sqlite_requests
 import time
 from kivy.properties import ObjectProperty
 
-Builder.load_file(r'contents\list\elements\boxes.kv')
+Builder.load_file(r'contents/list/elements/boxes.kv')
 
 
 class ProductsListRepresentation(BoxLayout):
