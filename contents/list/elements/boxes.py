@@ -205,7 +205,7 @@ class AllProductRepresentation(BoxLayout):
         super(AllProductRepresentation, self).__init__(**kwargs)
 
         self.height = global_variables.PRODUCT_REPRESENTATION_SIZE[0]
-        
+
         self.parent_listrepresentation = ''
 
         self.name = ''

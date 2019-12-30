@@ -51,7 +51,7 @@ class Authorization(Popup):
         sqlite_requests.remake_db()
 
     def get_width(self):
-        self.ids.width_id.text = str(global_variables.WIDTH)
+        self.ids.width_id.text = str(global_variables.WINDOW_SIZE)
 
 
 class MainScreenApp(App):

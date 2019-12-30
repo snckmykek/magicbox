@@ -16,7 +16,7 @@ class Database(object):
     """
 
     def __init__(self):
-        self.con = sqlite3.connect('./database_havka.db')
+        self.con = sqlite3.connect('database_havka.db')
         self.cur = self.con.cursor()
 
     def close(self):

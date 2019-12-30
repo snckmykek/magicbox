@@ -29,10 +29,11 @@ class List(BoxLayout):
         super(List, self).__init__(**kwargs)
 
     def fill_list_of_products_lists(self):
-        for _list in range(10):  # Test
-            ProductsListRepresentation = ProductsListRepresentationClass()
-            ProductsListRepresentation.ids.representation.text = str(_list)
-            self.ids.list_of_products_lists.add_widget(ProductsListRepresentation)
+        pass
+        # for _list in range(10):  # Test
+            # ProductsListRepresentation = ProductsListRepresentationClass()
+            # ProductsListRepresentation.ids.representation.text = str(_list)
+            # self.ids.list_of_products_lists.add_widget(ProductsListRepresentation)
 
     def open_AddList(self):
         window_AddList = AddList()
