@@ -10,6 +10,9 @@ class AddList(ModalView):
     def __init__(self, **kwargs):
         super(AddList, self).__init__(**kwargs)
 
+        self.ids.add_but.height = global_variables.BUTTON_SIZE[0]
+        self.ids.listname.height = global_variables.BUTTON_SIZE[0]
+
         self.parentlist = ''  # Object, which call this Object
 
     def add_list(self, text='No name'):  # Adds List (Product list) in List of Products list
