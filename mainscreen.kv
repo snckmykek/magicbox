@@ -100,4 +100,8 @@ MainBoxLayout:
             on_press: root.make_db()
             text: 'Make DB'
             size_hint_y: None
-        Widget:
+#        Widget:
+        Label:
+            id: width_id
+            text: '1'
+            on_touch_down: root.get_width()

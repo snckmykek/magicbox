@@ -1,11 +1,12 @@
 __version__ = "0.0.1"
+
 from kivy.app import App
 
-from kivy.config import Config
-
-Config.set('graphics', 'resizable', '1')
-Config.set('graphics', 'width', '360')
-Config.set('graphics', 'height', '640')
+# from kivy.config import Config
+#
+# Config.set('graphics', 'resizable', '1')
+# Config.set('graphics', 'width', '360')
+# Config.set('graphics', 'height', '640')
 
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
@@ -49,6 +50,9 @@ class Authorization(Popup):
     def make_db(self):
         sqlite_requests.remake_db()
 
+    def get_width(self):
+        self.ids.width_id.text = str(global_variables.WIDTH)
+
 
 class MainScreenApp(App):
     """"Every content-object (mini-application) is in a separate box of Carousel.
@@ -56,7 +60,6 @@ class MainScreenApp(App):
     """
 
     def build(self):
-
         self.root.matching_slides_and_buttons = {self.root.ids.budget_box: self.root.ids.toggle_button_budget,
                                                  self.root.ids.recipes_box: self.root.ids.toggle_button_recipes,
                                                  self.root.ids.progress_box: self.root.ids.toggle_button_progress,
@@ -71,7 +74,6 @@ class MainScreenApp(App):
 
         for box in self.root.matching_slides_and_contents.keys():  # Add content-objects from contents to boxes in Carousel
             box.add_widget(self.root.matching_slides_and_contents[box])
-
 
 
 if __name__ == "__main__":
