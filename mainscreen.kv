@@ -91,11 +91,13 @@ MainBoxLayout:
             text: 'user'
             size_hint_y: None
         Button:
+            id: close_but
             height: 40
             on_press: root.save_user()
             text: 'Close'
             size_hint_y: None
         Button:
+            id: make_db_but
             height: 40
             on_press: root.make_db()
             text: 'Make DB'

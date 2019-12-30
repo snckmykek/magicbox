@@ -42,6 +42,9 @@ class Authorization(Popup):
 
     def __init__(self, **kwargs):
         super(Authorization, self).__init__(**kwargs)
+        self.ids.username.height = global_variables.BUTTON_SIZE[0]
+        self.ids.close_but.height = global_variables.BUTTON_SIZE[0]
+        self.ids.make_db_but.height = global_variables.BUTTON_SIZE[0]
 
     def save_user(self):
         global_variables.USER = self.ids.username.text
