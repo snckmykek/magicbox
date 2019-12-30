@@ -2,6 +2,7 @@
   <dictionary name="bukre">
     <words>
       <w>listrepresentation</w>
+      <w>parentlist</w>
       <w>productlist</w>
     </words>
   </dictionary>

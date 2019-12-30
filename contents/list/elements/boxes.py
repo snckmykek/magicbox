@@ -15,8 +15,8 @@ class ProductsListRepresentation(BoxLayout):
 
     def __init__(self, **kwargs):
         super(ProductsListRepresentation, self).__init__(**kwargs)
-
         self.ProductsListBox = ProductsList()
+        self.height = global_variables.LIST_REPRESENTATION_SIZE[0]
 
     def open_products_list(self, name_of_list):
         self.ProductsListBox.parent_listrepresentation = name_of_list
@@ -81,6 +81,7 @@ class ProductRepresentation(BoxLayout):
     def __init__(self, **kwargs):
         super(ProductRepresentation, self).__init__(**kwargs)
 
+        self.height = global_variables.PRODUCT_REPRESENTATION_SIZE[0]
         self.parent_listrepresentation = ''
         self.parent_productlist = ObjectProperty
 
@@ -203,6 +204,8 @@ class AllProductRepresentation(BoxLayout):
     def __init__(self, **kwargs):
         super(AllProductRepresentation, self).__init__(**kwargs)
 
+        self.height = global_variables.PRODUCT_REPRESENTATION_SIZE[0]
+        
         self.parent_listrepresentation = ''
 
         self.name = ''
