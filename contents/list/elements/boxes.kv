@@ -131,7 +131,14 @@
             on_touch_up: if self.effect_y.overscroll > 50: root.show_more_products()
             GridLayout:
                 id: all_products_list
+                canvas.before:
+                    Color:
+                        rgba: (.92, .91, .92, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
                 cols: 1
+                spacing: 2
                 size_hint_y: None
                 height: self.minimum_height
         BoxLayout:
@@ -139,21 +146,15 @@
             padding: (0, 1, 0, 0)
             canvas.before:
                 Color:
-                    rgba: (0.7,0.7,0.7,1)
+                    rgba: (0.8,0.8,0.8,1)
                 Line:
                     width: 1
                     points: [self.pos[0], self.pos[1] + self.size[1]-1, self.pos[0] + self.size[0], self.pos[1] + self.size[1]-1]
-#
-#                Color:
-#                    rgba: (0.5,0.5,0.5,1)
-#                Line:
-#                    width: 1
-#                    points: [self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]]
             background_color: (1, 0, 0, 1)
             Button:
                 background_normal: ''
                 background_down: ''
-                background_color: (.92, .84, .73, 1)
+                background_color: (.95, .96, .95, 1)
                 color: (0, 0, 0, 1)
                 on_press: root.dismiss()
                 text: 'Complete'
@@ -162,11 +163,15 @@
     orientation: 'horizontal'
     height: 50
     size_hint_y: None
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
     Label:
         id: representation
         size_hint_x: .65
-        background_color: (.92, .91, .92, 1)
-        background_normal: ''
         color: (0, 0, 0, 1)
     Label:
         id: units
