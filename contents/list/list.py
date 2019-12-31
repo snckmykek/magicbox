@@ -32,6 +32,7 @@ class List(BoxLayout):
     def __init__(self, **kwargs):
         super(List, self).__init__(**kwargs)
         self.ids.addlist_but.size = global_variables.FLYING_BUTTON_SIZE
+        self.ids.addlist_but.background_color = global_variables.FLYING_BUTTON_BACKGROUNDCOLOR
 
     def fill_list_of_products_lists(self):
         pass
