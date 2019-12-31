@@ -1,4 +1,7 @@
 <List>:
+    size_hint: (1, 1)
+    background: ''
+    background_color: (1, 1, 1, 1)
     Screen:
         orientation: 'vertical'
         BoxLayout:
@@ -17,12 +20,11 @@
             id: addlist_but
             background_down: ''
             background_normal: ''
-            pos_hint: {'center_x': 0.80, 'top': 0.3}
+            pos_hint: {'center_x': 0.8, 'top': 0.3}
             size_hint: (None, None)
             text: 'Add'
             on_press: root.open_AddList()
-            height: 50
-            width: 50
+
 
 <AddList>:
     size_hint: .8, .4

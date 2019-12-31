@@ -47,11 +47,11 @@
                     on_press: root.dismiss()
                     text: 'Back to Lists'
         Button:
-            id: addlist_but
+            id: add_product_but
+            background_down: ''
+            background_normal: ''
             text: 'Add'
-            height: 50
-            width: 50
-            pos_hint: {'center_x': 0.80, 'top': 0.3}
+            pos_hint: {'center_x': 0.80, 'top': 0.318}
             size_hint: (None, None)
             on_press: root.open_all_products_list()
 
@@ -79,7 +79,6 @@
 <AllProductsList>:
     size_hint: 1, 1
     background: ''
-    background_color: (1, 1, 1, 1)
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
@@ -110,16 +109,19 @@
                 on_press: root.add_product()
         BoxLayout:
             size_hint_y: .06
-            Button:
+            ToggleButton:
                 id: popular_sorting
+                group: 'toggle_button_sort'
                 text: 'Popular'
                 on_press: root.update_sort('popular')
-            Button:
+            ToggleButton:
                 id: last_sorting
+                group: 'toggle_button_sort'
                 text: 'Last'
                 on_press: root.update_sort('last')
-            Button:
+            ToggleButton:
                 id: abc_sorting
+                group: 'toggle_button_sort'
                 text: 'Abc'
                 on_press: root.update_sort('abc')
         ScrollView:
@@ -134,7 +136,25 @@
                 height: self.minimum_height
         BoxLayout:
             size_hint_y: .06
+            padding: (0, 1, 0, 0)
+            canvas.before:
+                Color:
+                    rgba: (0.7,0.7,0.7,1)
+                Line:
+                    width: 1
+                    points: [self.pos[0], self.pos[1] + self.size[1]-1, self.pos[0] + self.size[0], self.pos[1] + self.size[1]-1]
+#
+#                Color:
+#                    rgba: (0.5,0.5,0.5,1)
+#                Line:
+#                    width: 1
+#                    points: [self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]]
+            background_color: (1, 0, 0, 1)
             Button:
+                background_normal: ''
+                background_down: ''
+                background_color: (.92, .84, .73, 1)
+                color: (0, 0, 0, 1)
                 on_press: root.dismiss()
                 text: 'Complete'
 

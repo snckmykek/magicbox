@@ -33,7 +33,11 @@ class ProductsList(ModalView):
     def __init__(self, **kwargs):
         super(ProductsList, self).__init__(**kwargs)
 
-        self.ids.addlist_but.size = global_variables.FLYING_BUTTON_SIZE
+        self.ids.add_product_but.size = global_variables.FLYING_BUTTON_SIZE
+        self.ids.add_product_but.background_color = (global_variables.FLYING_BUTTON_BACKGROUND_COLOR[0]+0.10,
+                                                     global_variables.FLYING_BUTTON_BACKGROUND_COLOR[1]+0.10,
+                                                     global_variables.FLYING_BUTTON_BACKGROUND_COLOR[2]+0.10,
+                                                     global_variables.FLYING_BUTTON_BACKGROUND_COLOR[3])
 
         self.current_products = []
         self.parent_listrepresentation = ''
