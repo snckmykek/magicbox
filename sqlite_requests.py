@@ -1,5 +1,6 @@
 # coding=utf-8
 import sqlite3
+import http_requests
 import time
 
 
@@ -19,6 +20,7 @@ class Database(object):
         self.con = sqlite3.connect('database_havka.db')
         self.cur = self.con.cursor()
         self.sqlite_create_db()
+        self.fill_db_global_products()
 
     def close(self):
         self.cur.close()
@@ -184,11 +186,18 @@ class Database(object):
         else:
             return False
 
+    def get_the_number_of_records_in_the_table(self, table='global_products'):
+        request = 'SELECT COUNT(*) FROM {}'.format(table)
+        self.cur.execute(request)
+        return self.cur.fetchall()[0][0]
+
+    def fill_db_global_products(self):
+
+        if self.get_the_number_of_records_in_the_table('global_products') == 0:
+            for prod in http_requests.get_global_products():
+                self.sqlite_fill_table('global_products', prod, 'шт')
+
 
 sqlite_requests = Database()
 
 
-def remake_db():
-    sqlite_requests.sqlite_create_db()
-
-# remake_db()

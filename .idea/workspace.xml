@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/http_requests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/elements/boxes.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/elements/boxes.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/elements/boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/elements/boxes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database_havka.db" beforeDir="false" afterPath="$PROJECT_DIR$/database_havka.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sqlite_requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite_requests.py" afterDir="false" />
     </list>
@@ -13,6 +11,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,6 +40,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="http_requests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="havka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/http_requests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="havka" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,6 +106,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.http_requests" />
         <item itemvalue="Python.sqlite_requests" />
       </list>
     </recent_temporary>
@@ -136,9 +163,10 @@
     </state>
     <state x="625" y="379" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577720830513" />
     <state x="714" y="390" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932238047" />
-    <state x="910" y="212" width="850" height="592" key="#xdebugger.evaluate" timestamp="1576929669918">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="809" y="213" width="850" height="592" key="#xdebugger.evaluate" timestamp="1577789308289">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="809" y="213" key="#xdebugger.evaluate/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789308289" />
     <state x="910" y="212" width="850" height="592" key="#xdebugger.evaluate/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576929669918" />
     <state x="493" y="100" key="CommitChangelistDialog2" timestamp="1577739266688">
       <screen x="0" y="0" width="1680" height="1010" />
@@ -149,45 +177,49 @@
     </state>
     <state x="544" y="261" key="FileChooserDialogImpl/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577720827183" />
     <state x="622" y="269" key="FileChooserDialogImpl/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576942525247" />
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom" timestamp="1577750709346">
+    <state width="1659" height="336" key="GridCell.Tab.0.bottom" timestamp="1577789454450">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577750709346" />
+    <state width="1659" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1259" height="418" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1280.45.1280.984@-1280.45.1280.984" timestamp="1577133583610" />
     <state width="1899" height="418" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932947922" />
-    <state width="1659" height="272" key="GridCell.Tab.0.center" timestamp="1577750709345">
+    <state width="1659" height="336" key="GridCell.Tab.0.center" timestamp="1577789454449">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.center/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577750709345" />
+    <state width="1659" height="336" key="GridCell.Tab.0.center/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454449" />
     <state width="1259" height="418" key="GridCell.Tab.0.center/0.0.1920.1040/-1280.45.1280.984@-1280.45.1280.984" timestamp="1577133583609" />
     <state width="1899" height="418" key="GridCell.Tab.0.center/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932947922" />
-    <state width="1659" height="272" key="GridCell.Tab.0.left" timestamp="1577750709345">
+    <state width="1659" height="336" key="GridCell.Tab.0.left" timestamp="1577789454449">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.left/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577750709345" />
+    <state width="1659" height="336" key="GridCell.Tab.0.left/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454449" />
     <state width="1259" height="418" key="GridCell.Tab.0.left/0.0.1920.1040/-1280.45.1280.984@-1280.45.1280.984" timestamp="1577133583609" />
     <state width="1899" height="418" key="GridCell.Tab.0.left/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932947921" />
-    <state width="1659" height="272" key="GridCell.Tab.0.right" timestamp="1577750709346">
+    <state width="1659" height="336" key="GridCell.Tab.0.right" timestamp="1577789454450">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.right/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577750709346" />
+    <state width="1659" height="336" key="GridCell.Tab.0.right/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1259" height="418" key="GridCell.Tab.0.right/0.0.1920.1040/-1280.45.1280.984@-1280.45.1280.984" timestamp="1577133583609" />
     <state width="1899" height="418" key="GridCell.Tab.0.right/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932947922" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1576932245060">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1577789454450">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932245060" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1576932245060">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="336" key="GridCell.Tab.1.center" timestamp="1577789454450">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.center/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932245060" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1576932245060">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="336" key="GridCell.Tab.1.left" timestamp="1577789454450">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.left/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932245060" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1576932245060">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="336" key="GridCell.Tab.1.right" timestamp="1577789454450">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.right/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577789454450" />
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576932245060" />
     <state x="529" y="142" key="SettingsEditor" timestamp="1577572135153">
       <screen x="0" y="0" width="1680" height="1010" />
@@ -199,5 +231,16 @@
     </state>
     <state x="574" y="335" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577720856669" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576941982185" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sqlite_requests.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
