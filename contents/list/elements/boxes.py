@@ -33,7 +33,7 @@ class ProductsList(ModalView):
     def __init__(self, **kwargs):
         super(ProductsList, self).__init__(**kwargs)
 
-        self.ids.addlist_but.size = global_variables.BUTTON_SIZE
+        self.ids.addlist_but.size = global_variables.FLYING_BUTTON_SIZE
 
         self.current_products = []
         self.parent_listrepresentation = ''
