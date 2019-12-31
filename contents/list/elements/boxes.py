@@ -203,8 +203,9 @@ class AllProductsList(ModalView):
         self.parent_productlist.on_pre_open()
 
     def update_sort(self, sort_button_text=None):
+
         self.product_pages_to_show = 1
-        self.sort = sort_button_text if (sort_button_text is not None) else self.sort
+        self.sort = sort_button_text if sort_button_text else self.sort
         self.search = self.ids.search.text if self.ids.search.text != 'Start typing the product name' else ''
 
         self.ids.all_products_list.clear_widgets()

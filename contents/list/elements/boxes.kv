@@ -96,33 +96,66 @@
             orientation: 'horizontal'
             TextInput:
                 id: search
+                background_normal: ''
+                background_active: ''
+                background_color: (1, 1, 1, 1)
                 color: (0, 0, 0, 1)
                 size_hint_x: 0.9
                 text: 'Start typing the product name'
                 on_text: root.update_sort()
                 on_focus: if self.text == 'Start typing the product name': self.text = ''
             Button:
+                background_normal: ''
+                background_down: ''
+                background_color: (.98, .98, .99, 1)
                 size_hint_x: 0.1
                 text: "+"
                 color: (0, 0, 0, 1)
                 on_press: root.add_product()
         BoxLayout:
             size_hint_y: .06
+            canvas.before:
+                Color:
+                    rgba: (.03, .67, .14, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
             ToggleButton:
                 id: popular_sorting
+                background_normal: ''
+                background_down: ''
+                background_color: (.95, .96, .95, 0)
+                color: (0, 0, 0, 1)
                 group: 'toggle_button_sort'
                 text: 'Popular'
                 on_press: root.update_sort('popular')
+                on_state:
+                    if self.state == 'down': self.color = (1, 1, 1, 1)
+                    else: self.color = (0, 0, 0, 1)
             ToggleButton:
                 id: last_sorting
+                background_normal: ''
+                background_down: ''
+                background_color: (.95, .96, .95, 0)
+                color: (0, 0, 0, 1)
                 group: 'toggle_button_sort'
                 text: 'Last'
                 on_press: root.update_sort('last')
+                on_state:
+                    if self.state == 'down': self.color = (1, 1, 1, 1)
+                    else: self.color = (0, 0, 0, 1)
             ToggleButton:
                 id: abc_sorting
+                background_normal: ''
+                background_down: ''
+                background_color: (.95, .96, .95, 0)
+                color: (0, 0, 0, 1)
                 group: 'toggle_button_sort'
                 text: 'Abc'
                 on_press: root.update_sort('abc')
+                on_state:
+                    if self.state == 'down': self.color = (1, 1, 1, 1)
+                    else: self.color = (0, 0, 0, 1)
         ScrollView:
             size_hint_y: .74
             do_scroll_x: False
@@ -137,6 +170,7 @@
                         size: self.size
                         pos: self.pos
                 cols: 1
+                spacing: 5
                 size_hint_y: None
                 height: self.minimum_height
         BoxLayout:
@@ -144,7 +178,7 @@
             padding: (0, 1, 0, 0)
             canvas.before:
                 Color:
-                    rgba: (0.91,0.91,0.92,1)
+                    rgba: (0.86,0.86,0.88,1)
                 Line:
                     width: 1
                     points: [self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]]
