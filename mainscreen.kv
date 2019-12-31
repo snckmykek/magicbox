@@ -31,7 +31,7 @@ MainBoxLayout:
                 pos_hint: {'center_x': 0.5, 'top': .92}
                 scroll_distance: 10
                 scroll_timeout: 50
-                size_hint_y: .86
+                size_hint_y: .85
                 on_current_slide: root.change_buttons_state(self.current_slide)
                 BoxLayout:
                     id: budget_box
@@ -49,7 +49,7 @@ MainBoxLayout:
                 color: (0,0,0,1)
                 orientation: 'horizontal'
                 pos_hint: {'center_x': 0.5, 'top': .06}
-                size_hint_y: .06
+                size_hint_y: .07
                 ToggleButton:
                     id: toggle_button_budget
                     group: 'toggle_button_main'

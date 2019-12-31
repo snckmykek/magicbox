@@ -33,7 +33,7 @@
                     color: (0, 0, 0, 1)
                     text: 'Products'
             ScrollView:
-                size_hint_y:.86
+                size_hint_y:.85
                 do_scroll_x: False
                 GridLayout:
                     id: products_list
@@ -41,7 +41,7 @@
                     size_hint_y: None
                     height: self.minimum_height
             BoxLayout:
-                size_hint_y: .06
+                size_hint_y: .07
                 Button:
                     on_press: root.dismiss()
                     text: 'Back to Lists'
@@ -157,7 +157,7 @@
                     if self.state == 'down': self.color = (1, 1, 1, 1)
                     else: self.color = (0, 0, 0, 1)
         ScrollView:
-            size_hint_y: .74
+            size_hint_y: .73
             do_scroll_x: False
             effect_cls: 'DampedScrollEffect'
             on_touch_up: if self.effect_y.overscroll > 50: root.show_more_products()
@@ -174,7 +174,7 @@
                 size_hint_y: None
                 height: self.minimum_height
         BoxLayout:
-            size_hint_y: .06
+            size_hint_y: .07
             padding: (0, 1, 0, 0)
             canvas.before:
                 Color:
@@ -191,7 +191,7 @@
             Button:
                 background_normal: ''
                 background_down: ''
-                background_color: (.95, .96, .95, 1)
+                background_color: (.03, .67, .14, 1)  # (.95, .96, .95, 1)
                 color: (0, 0, 0, 1)
                 on_press: root.dismiss()
                 text: 'Complete'
