@@ -95,12 +95,19 @@
                 text: 'All products'
         BoxLayout:
             size_hint_y: .06
+            orientation: 'horizontal'
             TextInput:
                 id: search
                 color: (0, 0, 0, 1)
+                size_hint_x: 0.9
                 text: 'Start typing the product name'
                 on_text: root.update_sort()
                 on_focus: if self.text == 'Start typing the product name': self.text = ''
+            Button:
+                size_hint_x: 0.1
+                text: "+"
+                color: (0, 0, 0, 1)
+                on_press: root.add_product()
         BoxLayout:
             size_hint_y: .06
             Button:

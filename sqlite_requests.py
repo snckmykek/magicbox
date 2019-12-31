@@ -18,6 +18,7 @@ class Database(object):
     def __init__(self):
         self.con = sqlite3.connect('database_havka.db')
         self.cur = self.con.cursor()
+        self.sqlite_create_db()
 
     def close(self):
         self.cur.close()
@@ -189,27 +190,5 @@ sqlite_requests = Database()
 
 def remake_db():
     sqlite_requests.sqlite_create_db()
-    for i in range(30):
-        sqlite_requests.sqlite_fill_table('global_products', 'Какой-то продукт ' + str(i), 'кг')
-
-    for i in range(30):
-        sqlite_requests.sqlite_fill_table('global_products', 'Общий продукт ' + str(i), 'кг')
-
-    for i in range(10):
-        sqlite_requests.sqlite_fill_table('personal_products', 'Личный продукт ' + str(i), 'шт', 'Admin', 3, 5, 123, 4,
-                                          0, 'test ' + str(i))
-
-    for i in range(10, 20):
-        sqlite_requests.sqlite_fill_table('personal_products', 'Личный продукт ' + str(i), 'кг', 'Admin')
-
-    for i in range(30, 50):
-        sqlite_requests.sqlite_fill_table('global_products', 'Общий продукт ' + str(i), 'шт')
-
-    for i in range(10):
-        sqlite_requests.sqlite_fill_table('personal_products', 'Какой-то продукт ' + str(i), 'шт', 'Admin 2')
-
-    for i in range(110, 120):
-        sqlite_requests.sqlite_fill_table('personal_products', 'Личный продукт ' + str(i), 'кг', 'Admin 2')
-
 
 # remake_db()

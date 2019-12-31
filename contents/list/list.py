@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.modalview import ModalView
 from contents.list.elements.boxes import ProductsListRepresentation as ProductsListRepresentationClass
 import global_variables
+from sqlite_requests import sqlite_requests
 
 
 class AddList(ModalView):
