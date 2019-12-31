@@ -126,6 +126,8 @@ class AllProductsList(ModalView):
     def __init__(self, **kwargs):
         super(AllProductsList, self).__init__(**kwargs)
 
+        self.ids.all_products_list.spacing = global_variables.SPACING
+
         self.parent_listrepresentation = ''
         self.parent_productlist = ObjectProperty
 
