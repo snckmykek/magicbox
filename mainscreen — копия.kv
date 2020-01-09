@@ -1,0 +1,123 @@
+MainBoxLayout:
+    Screen:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        RelativeLayout:
+            size_hint: 1, 1
+            pos_hint: {'left': 1, 'top': 1}
+            ActionBar:
+                pos_hint: {'center_x': 0.5, 'top': 1}
+                id: top_action_bar
+                background_color: (1, 1, 1, 1)  # (.03, .67, .14, 1)
+                background_image: 'pictures/test.png'
+                size_hint_y: .08
+                ActionView:
+                    ActionPrevious:
+                        id: action_previous
+                        title: 'Hello'
+                    ActionButton:
+                        text: 'Auth'
+                        on_press: root.auth()
+            Carousel:
+                id: content_box
+                anim_move_duration: 0.1
+                direction: 'right'
+                do_scroll_y: False
+                pos_hint: {'center_x': 0.5, 'top': .92}
+                scroll_distance: 10
+                scroll_timeout: 250
+                size_hint_y: .85
+                on_current_slide: root.change_buttons_state(self.current_slide)
+                BoxLayout:
+                    id: budget_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-01.png'
+                BoxLayout:
+                    id: recipes_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-02.png'
+                BoxLayout:
+                    id: progress_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-03.png'
+                BoxLayout:
+                    id: list_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-04.png'
+                BoxLayout:
+                    id: glider_box
+            BoxLayout:
+                id: toggle_button
+                background_color: (.93,.93,.93,1)
+                color: (0,0,0,1)
+                orientation: 'horizontal'
+                pos_hint: {'center_x': 0.5, 'top': .07}
+                size_hint_y: .07
+                ToggleButton:
+                    id: toggle_button_budget
+                    group: 'toggle_button_main'
+                    on_press: root.set_current_slide(self) # B - budget (slide of Carousel)
+                    text: 'B'
+                ToggleButton:
+                    id: toggle_button_recipes
+                    group: 'toggle_button_main'
+                    on_press: root.set_current_slide(self) # R - recipes (slide of Carousel)
+                    text: 'R'
+                ToggleButton:
+                    id: toggle_button_progress
+                    group: 'toggle_button_main'
+                    on_press: root.set_current_slide(self) # P - progress (slide of Carousel)
+                    state: 'down'
+                    text: 'P'
+                ToggleButton:
+                    id: toggle_button_list
+                    group: 'toggle_button_main'
+                    on_press: root.set_current_slide(self) # L - list (slide of Carousel)
+                    text: 'L'
+                ToggleButton:
+                    id: toggle_button_glider
+                    group: 'toggle_button_main'
+                    on_press: root.set_current_slide(self) # G - glider (slide of Carousel)
+                    text: 'G'
+
+<Authorization>:
+    size_hint: .8, .6
+    title: 'Auth'
+    BoxLayout:
+        orientation: 'vertical'
+        Widget:
+        TextInput:
+            id: username
+            color: (0, 0, 0, 1)
+            height: 40
+            on_touch_down: if self.text == 'user': self.text = ''
+            text: 'user'
+            size_hint_y: None
+        Button:
+            id: close_but
+            height: 40
+            on_press: root.save_user()
+            text: 'Close'
+            size_hint_y: None
+        Widget:
+        Label:
+            id: width_id
+            text: '1'
+            on_touch_down: root.get_width()
