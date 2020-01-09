@@ -11,6 +11,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
+from kivy.uix.button import Button
 # from contents import BudgetBox, GliderBox, ListBox, ProgressBox, RecipesBox
 # import global_variables
 import sqlite_requests
@@ -60,9 +61,13 @@ class MainScreenApp(App):
     """
 
     def build(self):
-        for i in range(150):
-            self.root.ids.products_list.add_widget(Label(text=str(i), color=(1, 0, 0, 1),
-                                                         size_hint_y=None, height=100))
+        for i in range(500):
+            a = BoxLayout(orientation='horizontal', size_hint_y=None, height=100)
+            a.add_widget(Label(text=str(i), color=(1, 0, 0, 1),
+                               size_hint_y=None, height=100))
+            a.add_widget(Button(text=str(i), color=(1, 0, 0, 1),
+                                size_hint_y=None, height=100))
+            self.root.ids.products_list.add_widget(a)
         # self.root.matching_slides_and_buttons = {self.root.ids.budget_box: self.root.ids.toggle_button_budget,
         #                                          self.root.ids.recipes_box: self.root.ids.toggle_button_recipes,
         #                                          self.root.ids.progress_box: self.root.ids.toggle_button_progress,
