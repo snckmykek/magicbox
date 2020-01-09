@@ -1,0 +1,19 @@
+<ProductRepresentation>:
+    orientation: 'horizontal'
+    height: 50
+    size_hint_y: None
+    Label:
+        id: representation
+        size_hint_x: .65
+        background_color: (.92, .91, .92, 1)
+        background_normal: ''
+        color: (0, 0, 0, 1)
+    Label:
+        id: user
+        size_hint_x: .2
+        text: 'product'
+        color: (0,0,0,1)
+    CheckBox:
+        id: bought
+        size_hint_x: .15
+        on_active: root.update_record_bd(True)

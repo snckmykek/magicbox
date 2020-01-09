@@ -1,0 +1,38 @@
+#:import CommonButton elements.flying_button.FlyingButton
+
+<ProductsList>:
+    background: ''
+    background_color: (1, 1, 1, 1)
+    Screen:
+        orientation: 'vertical'
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'top': 1}
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint_y: .08
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: (.03, .67, .14, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    color: (0, 0, 0, 1)
+                    text: 'Products'
+            ScrollView:
+                size_hint_y:.85
+                do_scroll_x: False
+                GridLayout:
+                    id: products_list
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+            BoxLayout:
+                size_hint_y: .07
+                Button:
+                    on_press: root.dismiss()
+                    text: 'Back to Lists'
+        FlyingButton:
+            text: 'Add'
+            pos_hint: {'center_x': 0.80, 'top': 0.325}
+            on_press: root.open_all_products_list()

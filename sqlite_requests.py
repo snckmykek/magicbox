@@ -119,7 +119,7 @@ class Database(object):
         cols = [col[1] for col in self.cur.fetchall()]
         return [col for col in cols if col not in useless]
 
-    def get_all_products(self, user, search='', sort='popular', products_to_show=20, products_in_list=None):
+    def get_all_products(self, user, search='', sort='popular', products_to_show=10, products_in_list=None):
 
         # for personal products
         cols = self.get_list_of_columns_without_useless('personal_products', 'user')

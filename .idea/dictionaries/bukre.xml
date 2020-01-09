@@ -2,12 +2,17 @@
   <dictionary name="bukre">
     <words>
       <w>addlist</w>
+      <w>allproduct</w>
+      <w>allproducts</w>
       <w>backgroundcolor</w>
+      <w>listname</w>
       <w>listrepresentation</w>
       <w>noname</w>
       <w>parentlist</w>
       <w>productlist</w>
       <w>strikethrough</w>
+      <w>textinput</w>
+      <w>userinfo</w>
     </words>
   </dictionary>
 </component>

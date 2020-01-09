@@ -1,0 +1,24 @@
+#:import FlyingButton elements.flying_button.FlyingButton
+#:import BUTTON global_variables.BUTTON
+
+<List>:
+    size_hint: (1, 1)
+    background: ''
+    background_color: (1, 1, 1, 1)
+    Screen:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.5, 'top': 1}
+            ScrollView:
+                do_scroll_x: False
+                scroll_distance: 10
+                scroll_timeout: 50
+                GridLayout:
+                    id: list_of_products_lists
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+        FlyingButton:
+            background_color: (.88, .34, .09, 1)
+            on_press: root.open_ListCreator()

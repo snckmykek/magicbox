@@ -1,0 +1,48 @@
+<AllProductRepresentation>:
+    orientation: 'horizontal'
+    height: 50
+    size_hint_y: None
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        Color:
+            rgba: (0.90, 0.90 ,0.92 ,1)
+        Line:
+            width: 1
+            points: [self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]]
+        Color:
+            rgba: (0.96, 0.96, 0.97 ,1)
+        Line:
+            width: 1
+            points: [self.pos[0], self.pos[1] + self.size[1]-1, self.pos[0] + self.size[0], self.pos[1] + self.size[1]-1]
+        Color:
+            rgba: (0.92, 0.92, 0.93 ,1)
+        Line:
+            width: 1
+            points: [self.pos[0], self.pos[1] + 2, self.pos[0] + self.size[0], self.pos[1] + 2]
+        Color:
+            rgba: (0.85, 0.85, 0.86, 1)
+        Line:
+            width: 1
+            points: [self.pos[0], self.pos[1] + 1, self.pos[0] + self.size[0], self.pos[1] + 1]
+        Color:
+            rgba: (0.91, 0.91, 0.92, 1)
+        Line:
+            width: 1
+            points: [self.pos[0], self.pos[1], self.pos[0] + self.size[0], self.pos[1]]
+    Label:
+        id: representation
+        size_hint_x: .65
+        color: (0, 0, 0, 1)
+    Label:
+        id: units
+        size_hint_x: .2
+        text: 'all_product'
+        color: (0,0,0,1)
+    CheckBox:
+        id: selected
+        size_hint_x: .15
+        on_active: root.update_record_bd()

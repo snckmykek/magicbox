@@ -1,0 +1,19 @@
+#:import CommonButton elements.common_button.CommonButton
+#:import CommonTextInput elements.common_textinput.CommonTextInput
+
+<ListCreator>:
+    size_hint: (.8, .4)
+    title: 'Create list'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .8, 1
+        Widget:
+        CommonTextInput:
+            id: listname
+            color: (0, 0, 0, 1)
+            on_touch_down: if self.text == 'Some list': self.text = ''
+            text: 'Some list'
+        CommonButton:
+            on_press: root.add_list(listname.text)
+            text: 'Add'
+        Widget:
