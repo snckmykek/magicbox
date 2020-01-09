@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/budget/budget.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/budget.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/mainscreen.kv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
