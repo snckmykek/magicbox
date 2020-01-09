@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/global_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/global_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,11 +262,11 @@
     </state>
     <state x="529" y="142" key="SettingsEditor/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577572135153" />
     <state x="659" y="135" key="SettingsEditor/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576942586773" />
-    <state x="574" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1578569836849">
+    <state x="574" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1578596290199">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="574" y="335" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.80.1280.920@0.0.1680.1010" timestamp="1577912501027" />
-    <state x="574" y="335" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.84.1280.920@0.0.1680.1010" timestamp="1578569836849" />
+    <state x="574" y="335" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.84.1280.920@0.0.1680.1010" timestamp="1578596290199" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1280.45.1280.984@0.0.1920.1040" timestamp="1576941982185" />
     <state x="581" y="149" key="refactoring.ChangeSignatureDialog" timestamp="1578580725224">
       <screen x="0" y="0" width="1680" height="1010" />
