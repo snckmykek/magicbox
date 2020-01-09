@@ -35,12 +35,32 @@ MainBoxLayout:
                 on_current_slide: root.change_buttons_state(self.current_slide)
                 BoxLayout:
                     id: budget_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-01.png'
                 BoxLayout:
                     id: recipes_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-02.png'
                 BoxLayout:
                     id: progress_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-03.png'
                 BoxLayout:
                     id: list_box
+                    canvas.before:
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                            source: 'pictures/fon/Untitled-3-04.png'
                 BoxLayout:
                     id: glider_box
             BoxLayout:
