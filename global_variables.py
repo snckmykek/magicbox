@@ -54,7 +54,7 @@ class ProductRepresentation:
 
     def __init__(self):
         self.width = 0  # width not used for now
-        self.height = round(WINDOW.height / 10)
+        self.height = round(WINDOW.height / 15)
         self.size = (self.width, self.height)
 # end List
 
