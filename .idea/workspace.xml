@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/budget/budget.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/budget/budget.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/glider/glider.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/glider/glider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/elements/boxes.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/elements/boxes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/list.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/list.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/progress/progress.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/progress/progress.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/recipes/recipes.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/recipes/recipes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_havka.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global_products.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global_variables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/http_requests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main — копия.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainscreen — копия.kv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/fon/Untitled-3-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/fon/Untitled-3-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/fon/Untitled-3-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/fon/Untitled-3-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite_requests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/te.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/list/elements/boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/elements/boxes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -134,7 +134,7 @@ class AllProductsList(ModalView):
         self.all_products = []
         self.current_products = []
         self.product_pages_to_show = 1  # how_many_product_pages_to_show*how_many_products_to_show
-        self.products_to_show = 20
+        self.products_to_show = 10
         self.sort = 'popular'  # 'last', 'abc'
         self.search = ''
         self.products_in_list = []  # for request if get_all_products
