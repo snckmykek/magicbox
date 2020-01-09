@@ -10,10 +10,8 @@ Config.set('graphics', 'height', '640')
 
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
-from kivy.uix.label import Label
 from contents import BudgetBox, GliderBox, ListBox, ProgressBox, RecipesBox
-import global_variables
-import sqlite_requests
+from global_variables import TEXTINPUT, BUTTON, WINDOW, USER
 
 
 class MainBoxLayout(BoxLayout):
@@ -42,16 +40,16 @@ class Authorization(Popup):
 
     def __init__(self, **kwargs):
         super(Authorization, self).__init__(**kwargs)
-        self.ids.username.height = global_variables.BUTTON_SIZE[0]
-        self.ids.close_but.height = global_variables.BUTTON_SIZE[0]
-        self.ids.make_db_but.height = global_variables.BUTTON_SIZE[0]
+        self.ids.username.height = TEXTINPUT.common_button.height
+        self.ids.close_but.height = BUTTON.common_button.height
+        self.ids.make_db_but.height = BUTTON.common_button.height
 
     def save_user(self):
-        global_variables.USER = self.ids.username.text
+        USER.name = self.ids.username.text
         self.dismiss()
 
     def get_width(self):
-        self.ids.width_id.text = str(global_variables.WINDOW_SIZE)
+        self.ids.width_id.text = str(WINDOW.size)
 
 
 class MainScreenApp(App):

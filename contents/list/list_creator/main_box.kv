@@ -2,7 +2,7 @@
 #:import CommonTextInput elements.common_textinput.CommonTextInput
 
 <ListCreator>:
-    size_hint: (.8, .4)
+    size_hint: (.8, .8)
     title: 'Create list'
     BoxLayout:
         orientation: 'vertical'
@@ -16,4 +16,6 @@
         CommonButton:
             on_press: root.add_list(listname.text)
             text: 'Add'
-        Widget:
+        Button:
+            on_press: root.test(self)
+            text: 'test'
