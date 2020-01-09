@@ -50,9 +50,6 @@ class Authorization(Popup):
         global_variables.USER = self.ids.username.text
         self.dismiss()
 
-    def make_db(self):
-        sqlite_requests.remake_db()
-
     def get_width(self):
         self.ids.width_id.text = str(global_variables.WINDOW_SIZE)
 

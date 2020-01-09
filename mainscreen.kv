@@ -13,8 +13,8 @@ MainBoxLayout:
             ActionBar:
                 pos_hint: {'center_x': 0.5, 'top': 1}
                 id: top_action_bar
-                background_color: (.03, .67, .14, 1)
-                background_image: ''
+                background_color: (1, 1, 1, 1)  # (.03, .67, .14, 1)
+                background_image: 'pictures/test.png'
                 size_hint_y: .08
                 ActionView:
                     ActionPrevious:
@@ -96,13 +96,7 @@ MainBoxLayout:
             on_press: root.save_user()
             text: 'Close'
             size_hint_y: None
-        Button:
-            id: make_db_but
-            height: 40
-            on_press: root.make_db()
-            text: 'Make DB'
-            size_hint_y: None
-#        Widget:
+        Widget:
         Label:
             id: width_id
             text: '1'

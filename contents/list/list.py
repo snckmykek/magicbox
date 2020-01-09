@@ -19,6 +19,9 @@ class AddList(ModalView):
     def add_list(self, text='No name'):  # Adds List (Product list) in List of Products list
         ProductsListRepresentation = ProductsListRepresentationClass()
         ProductsListRepresentation.ids.representation.text = str(text)
+
+        sqlite_requests.sqlite_fill_table('lists', str(text), user=global_variables.USER)
+
         self.parentlist.ids.list_of_products_lists.add_widget(ProductsListRepresentation)
         self.dismiss()
 
@@ -33,13 +36,15 @@ class List(BoxLayout):
         super(List, self).__init__(**kwargs)
         self.ids.addlist_but.size = global_variables.FLYING_BUTTON_SIZE
         self.ids.addlist_but.background_color = global_variables.FLYING_BUTTON_BACKGROUND_COLOR
+        self.fill_list_of_products_lists()
 
     def fill_list_of_products_lists(self):
-        pass
-        # for _list in range(10):  # Test
-            # ProductsListRepresentation = ProductsListRepresentationClass()
-            # ProductsListRepresentation.ids.representation.text = str(_list)
-            # self.ids.list_of_products_lists.add_widget(ProductsListRepresentation)
+        lists = sqlite_requests.sqlite_read_table('lists')
+        for current_list in lists:
+            if current_list[0] == global_variables.USER:
+                ListRepresentation = ProductsListRepresentationClass()
+                ListRepresentation.ids.representation.text = current_list[1]
+                self.ids.list_of_products_lists.add_widget(ListRepresentation)
 
     def open_AddList(self):
         window_AddList = AddList()
@@ -48,4 +53,3 @@ class List(BoxLayout):
 
 
 ListBox = List()
-ListBox.fill_list_of_products_lists()

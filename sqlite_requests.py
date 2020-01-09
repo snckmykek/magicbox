@@ -52,8 +52,12 @@ class Database(object):
                          'quantity FLOAT,'
                          'bought BOOLEAN,'  # List of products
                          'upper_name TEXT)')
+        self.cur.execute('CREATE TABLE IF NOT EXISTS lists('  
+                         'user TEXT,'
+                         'name TEXT,'
+                         'upper_name TEXT)')
 
-    def sqlite_fill_table(self, table_name, name, units, user='noname', rating=0.0, average_rating=0.0,
+    def sqlite_fill_table(self, table_name, name, units='шт', user='noname', rating=0.0, average_rating=0.0,
                           frequency_of_use=0, quality=0.0, last_use=0, note='', price=0.00, quantity=0.000,
                           products_list='noname', bought=False):
 
@@ -66,18 +70,20 @@ class Database(object):
         elif table_name == 'current_products':
             self.cur.execute('INSERT INTO current_products VALUES("{0}","{1}","{2}","{3}","{4}","{5}","{6}","{7}")'
                              .format(user, products_list, name, units, price, quantity, bought, name.upper()))
+        elif table_name == 'lists':
+            self.cur.execute('INSERT INTO lists VALUES("{0}","{1}","{2}")'.format(user, name, name.upper()))
         self.con.commit()
 
     def sqlite_read_table(self, table_name, columns=None, sort_by=None, values=None):
         request = 'SELECT '
-        if columns is None:
-            request += '*'
-        else:
+        if columns:
             for column in columns:
                 request += column + ', '
             request = request[:-2]
+        else:
+            request += '*'
         request += ' FROM ' + table_name
-        if sort_by is not None:
+        if sort_by:
             request += ' ORDER BY ' + sort_by
 
         self.cur.execute(request)
