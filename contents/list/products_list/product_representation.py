@@ -3,11 +3,12 @@ from kivy.lang.builder import Builder
 from global_variables import LIST, USER
 from sqlite_requests import sqlite_requests
 from kivy.properties import ObjectProperty
+from kivy.uix.carousel import Carousel
 
 Builder.load_file(r'contents/list/products_list/product_representation.kv')
 
 
-class ProductRepresentation(BoxLayout):
+class ProductRepresentation(Carousel):
     """Element for List of products.
     """
 
