@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.modalview import ModalView
 from sqlite_requests import sqlite_requests
 from contents.list.list_representation import ListRepresentation
-from global_variables import *
+from global_variables import USER, WINDOW, BUTTON
 
 Builder.load_file(r'contents/list/list_creator/main_box.kv')
 
