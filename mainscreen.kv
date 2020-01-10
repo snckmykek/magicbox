@@ -70,32 +70,36 @@ MainBoxLayout:
                 orientation: 'horizontal'
                 pos_hint: {'center_x': 0.5, 'top': .07}
                 size_hint_y: .07
-                ToggleButton:
+                MainToggleButton:
                     id: toggle_button_budget
-                    group: 'toggle_button_main'
-                    on_press: root.set_current_slide(self) # B - budget (slide of Carousel)
                     text: 'B'
-                ToggleButton:
+                    on_press: root.set_current_slide(self)
+                MainToggleButton:
                     id: toggle_button_recipes
-                    group: 'toggle_button_main'
-                    on_press: root.set_current_slide(self) # R - recipes (slide of Carousel)
                     text: 'R'
-                ToggleButton:
+                    on_press: root.set_current_slide(self)
+                MainToggleButton:
                     id: toggle_button_progress
-                    group: 'toggle_button_main'
-                    on_press: root.set_current_slide(self) # P - progress (slide of Carousel)
                     state: 'down'
                     text: 'P'
-                ToggleButton:
+                    on_press: root.set_current_slide(self)
+                MainToggleButton:
                     id: toggle_button_list
-                    group: 'toggle_button_main'
-                    on_press: root.set_current_slide(self) # L - list (slide of Carousel)
                     text: 'L'
-                ToggleButton:
+                    on_press: root.set_current_slide(self)
+                MainToggleButton:
                     id: toggle_button_glider
-                    group: 'toggle_button_main'
-                    on_press: root.set_current_slide(self) # G - glider (slide of Carousel)
                     text: 'G'
+                    on_press: root.set_current_slide(self)
+
+
+<MainToggleButton@ToggleButton>:
+    background_down: ''
+    background_normal: ''
+    background_color: (.25, .25, .25, 1)
+    color: (.2, 0, .5, 1) if self.state == 'down' else (1, 1, 1, 1)
+    group: 'toggle_button_main'
+
 
 <Authorization>:
     size_hint: .8, .6

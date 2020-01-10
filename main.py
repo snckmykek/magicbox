@@ -31,7 +31,7 @@ class MainBoxLayout(BoxLayout):
             button.state = 'normal'
         self.matching_slides_and_buttons[current_slide].state = 'down'
 
-    def auth(self):
+    def auth(self):  # Каждый раз новый объект. Запихнуть в init када буду делать авторизацию
         popup = Authorization()
         popup.open()
 
@@ -40,9 +40,8 @@ class Authorization(Popup):
 
     def __init__(self, **kwargs):
         super(Authorization, self).__init__(**kwargs)
-        self.ids.username.height = TEXTINPUT.common_button.height
+        self.ids.username.height = TEXTINPUT.common_textinput.height
         self.ids.close_but.height = BUTTON.common_button.height
-        self.ids.make_db_but.height = BUTTON.common_button.height
 
     def save_user(self):
         USER.name = self.ids.username.text
@@ -72,6 +71,8 @@ class MainScreenApp(App):
 
         for box in self.root.matching_slides_and_contents.keys():  # Add content-objects from contents to boxes in Carousel
             box.add_widget(self.root.matching_slides_and_contents[box])
+
+        self.root.ids.content_box.load_slide(list(self.root.matching_slides_and_buttons.keys())[2])
 
 
 if __name__ == "__main__":
