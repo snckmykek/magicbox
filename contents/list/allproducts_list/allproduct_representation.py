@@ -3,6 +3,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang.builder import Builder
 from global_variables import LIST, USER
 from sqlite_requests import sqlite_requests
+from elements.longpress_button import LongpressButton
 import time
 
 Builder.load_file(r'contents/list/allproducts_list/allproduct_representation.kv')
@@ -17,6 +18,7 @@ class AllProductRepresentation(BoxLayout):
 
         self.height = LIST.product_representation.height
 
+        self.parent_allproducts = ObjectProperty
         self.parent_listrepresentation = ObjectProperty
 
         self.name = ''
@@ -63,3 +65,9 @@ class AllProductRepresentation(BoxLayout):
         else:
             sqlite_requests.sqlite_delete_record('current_products', name=self.name, user=USER.name,
                                                  products_list=self.parent_listrepresentation)
+
+    def delete_product(self):
+        sqlite_requests.sqlite_delete_record('global_products', name=self.name)
+        sqlite_requests.sqlite_delete_record('personal_products', name=self.name, user=USER.name)
+
+        self.parent_allproducts.delete_product_from_list(self)

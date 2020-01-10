@@ -8,10 +8,15 @@
         Rectangle:
             size: self.size
             pos: self.pos
-    Label:
+    LongpressButton:
         id: representation
-        size_hint_x: .65
+        background_normal: ''
+        background_down: ''
+        background_color: (1, 1, 1, 1)
         color: (0, 0, 0, 1)
+        size_hint_x: .65
+        on_short_press: selected.active = not selected.active
+        on_long_press: root.delete_product()
     Label:
         id: units
         size_hint_x: .2

@@ -54,6 +54,7 @@ class AllProductsList(ModalView):
                 continue
             Product = AllProductRepresentation()
             Product.parent_listrepresentation = self.parent_listrepresentation
+            Product.parent_allproducts = self
             Product.name = product[0]
             Product.units = product[1]
             Product.ids.units.text = str(Product.units)
@@ -105,3 +106,6 @@ class AllProductsList(ModalView):
                                           0, 0, 0, 0, round(time.time()), '')
         self.ids.search.text = ''
         self.update_sort()
+
+    def delete_product_from_list(self, product):
+        self.ids.all_products_list.remove_widget(product)

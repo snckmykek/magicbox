@@ -1,4 +1,3 @@
-from kivy.uix.boxlayout import BoxLayout
 from kivy.lang.builder import Builder
 from global_variables import LIST, USER
 from sqlite_requests import sqlite_requests
@@ -47,3 +46,10 @@ class ProductRepresentation(Carousel):
 
         else:
             pass
+
+    def delete_product_from_list(self):
+        if self.slides[1] == self.current_slide:
+            self.parent_productlist.delete_product_from_list(self)
+
+            sqlite_requests.sqlite_delete_record('current_products', name=self.name, user=USER.name,
+                                                 products_list=self.parent_listrepresentation)

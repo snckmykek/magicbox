@@ -1,4 +1,5 @@
 <ProductRepresentation>:
+    anim_move_duration: .15
     height: 50
     size_hint_y: None
     direction: 'right'
@@ -6,6 +7,7 @@
     min_move: 0.1
     scroll_distance: 30
     scroll_timeout: 250
+    on_current_slide: self.delete_product_from_list()
     BoxLayout:
         orientation: 'horizontal'
         Label:

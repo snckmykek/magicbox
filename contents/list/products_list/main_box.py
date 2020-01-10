@@ -51,3 +51,6 @@ class ProductsList(ModalView):
         children_dict = sorted(children_dict.items(), key=lambda item: (item[1][0], item[1][1]))
         for elem in children_dict:
             self.ids.products_list.add_widget(elem[0])
+
+    def delete_product_from_list(self, product):
+        self.ids.products_list.remove_widget(product)
