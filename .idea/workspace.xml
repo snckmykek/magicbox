@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/contents/list/products_list/main_box.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/products_list/main_box.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/list/products_list/product_representation.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/products_list/product_representation.kv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
