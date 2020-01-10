@@ -43,42 +43,19 @@
                 Rectangle:
                     size: self.size
                     pos: self.pos
-            ToggleButton:
+            AllProductsToggleButton:
                 id: popular_sorting
-                background_normal: ''
-                background_down: ''
-                background_color: (.95, .96, .95, 0)
-                color: (0, 0, 0, 1)
-                group: 'toggle_button_sort'
+                state: 'down'
                 text: 'Popular'
                 on_press: root.update_sort('popular')
-                on_state:
-                    if self.state == 'down': self.color = (1, 1, 1, 1)
-                    else: self.color = (0, 0, 0, 1)
-            ToggleButton:
+            AllProductsToggleButton:
                 id: last_sorting
-                background_normal: ''
-                background_down: ''
-                background_color: (.95, .96, .95, 0)
-                color: (0, 0, 0, 1)
-                group: 'toggle_button_sort'
                 text: 'Last'
                 on_press: root.update_sort('last')
-                on_state:
-                    if self.state == 'down': self.color = (1, 1, 1, 1)
-                    else: self.color = (0, 0, 0, 1)
-            ToggleButton:
+            AllProductsToggleButton:
                 id: abc_sorting
-                background_normal: ''
-                background_down: ''
-                background_color: (.95, .96, .95, 0)
-                color: (0, 0, 0, 1)
-                group: 'toggle_button_sort'
                 text: 'Abc'
                 on_press: root.update_sort('abc')
-                on_state:
-                    if self.state == 'down': self.color = (1, 1, 1, 1)
-                    else: self.color = (0, 0, 0, 1)
         ScrollView:
             size_hint_y: .73
             do_scroll_x: False
@@ -96,25 +73,15 @@
                 spacing: 5
                 size_hint_y: None
                 height: self.minimum_height
-        BoxLayout:
+        CommonButton:
             size_hint_y: .07
-            padding: (0, 1, 0, 0)
-            canvas.before:
-                Color:
-                    rgba: (0.86,0.86,0.88,1)
-                Line:
-                    width: 1
-                    points: [self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]]
-                Color:
-                    rgba: (0.96,0.96,0.97,1)
-                Line:
-                    width: 1
-                    points: [self.pos[0], self.pos[1] + self.size[1]-1, self.pos[0] + self.size[0], self.pos[1] + self.size[1]-1]
-            background_color: (1, 0, 0, 1)
-            Button:
-                background_normal: ''
-                background_down: ''
-                background_color: (.03, .67, .14, 1)  # (.95, .96, .95, 1)
-                color: (0, 0, 0, 1)
-                on_press: root.dismiss()
-                text: 'Complete'
+            on_press: root.dismiss()
+            text: 'Complete'
+
+
+<AllProductsToggleButton@ToggleButton>:
+    background_normal: ''
+    background_down: ''
+    background_color: (.95, .96, .95, 0)
+    color: (1, 1, 1, 1) if self.state == 'down' else (0, 0, 0, 1)
+    group: 'toggle_button_sort'

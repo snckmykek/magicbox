@@ -8,6 +8,9 @@ Config.set('graphics', 'resizable', '1')
 Config.set('graphics', 'width', '360')
 Config.set('graphics', 'height', '640')
 
+from kivy.lang.builder import Builder
+Builder.load_file('elements/import_elements.kv')
+
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.popup import Popup
 from contents import BudgetBox, GliderBox, ListBox, ProgressBox, RecipesBox

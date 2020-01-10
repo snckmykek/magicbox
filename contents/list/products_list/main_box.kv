@@ -1,5 +1,3 @@
-#:import CommonButton elements.flying_button.FlyingButton
-
 <ProductsList>:
     background: ''
     background_color: (1, 1, 1, 1)
@@ -27,11 +25,10 @@
                     cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-            BoxLayout:
+            CommonButton:
                 size_hint_y: .07
-                Button:
-                    on_press: root.dismiss()
-                    text: 'Back to Lists'
+                on_press: root.dismiss()
+                text: 'Back to Lists'
         FlyingButton:
             text: 'Add'
             pos_hint: {'center_x': 0.80, 'top': 0.325}
