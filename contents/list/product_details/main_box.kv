@@ -12,25 +12,41 @@
                 pos: self.pos
         BoxLayout:
             Label:
+                text: 'delete'
+            CommonButton:
+                on_release: root.delete_product()
+        BoxLayout:
+            Label:
                 text: 'name'
             TextInput:
+                id: name
         BoxLayout:
             Label:
                 text: 'units'
             TextInput:
+                id: units
         BoxLayout:
             Label:
                 text: 'rating'
             TextInput:
+                id: rating
         BoxLayout:
             Label:
                 text: 'quality'
             TextInput:
+                id: quality
         BoxLayout:
             Label:
-                text: 'price'
+                text: 'current_price'
             TextInput:
+                id: current_price
         BoxLayout:
             Label:
                 text: 'note'
             TextInput:
+                id: note
+        BoxLayout:
+            Label:
+                text: 'Save changes'
+            CommonButton:
+                on_release: root.save_changes()

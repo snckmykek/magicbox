@@ -15,8 +15,8 @@
         background_color: (1, 1, 1, 1)
         color: (0, 0, 0, 1)
         size_hint_x: .65
-        on_short_press: root.open_ProductDetails()  # selected.active = not selected.active
-        on_long_press: root.delete_product()
+        on_short_press: selected.active = not selected.active
+        on_long_press: root.open_ProductDetails()
     Label:
         id: units
         size_hint_x: .2

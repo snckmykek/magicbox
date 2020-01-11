@@ -72,4 +72,5 @@ class AllProductRepresentation(BoxLayout):
         self.parent_allproducts.delete_product_from_list(self)
 
     def open_ProductDetails(self):
+        self.parent_allproducts.product_details.parent_product = self
         self.parent_allproducts.product_details.open()
