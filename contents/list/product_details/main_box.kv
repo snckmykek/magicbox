@@ -1,0 +1,36 @@
+<ProductDetails>:
+    background: ''
+    background_color: (.4, .2, .2, .4)
+    size_hint: .8, .8
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: (.2, .2, .2, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            Label:
+                text: 'name'
+            TextInput:
+        BoxLayout:
+            Label:
+                text: 'units'
+            TextInput:
+        BoxLayout:
+            Label:
+                text: 'rating'
+            TextInput:
+        BoxLayout:
+            Label:
+                text: 'quality'
+            TextInput:
+        BoxLayout:
+            Label:
+                text: 'price'
+            TextInput:
+        BoxLayout:
+            Label:
+                text: 'note'
+            TextInput:

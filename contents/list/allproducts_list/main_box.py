@@ -4,6 +4,7 @@ from kivy.lang import Builder
 from sqlite_requests import sqlite_requests
 from global_variables import LIST, USER
 from contents.list.allproducts_list.allproduct_representation import AllProductRepresentation
+from contents.list.product_details.main_box import ProductDetails
 import time
 
 Builder.load_file(r'contents/list/allproducts_list/main_box.kv')
@@ -18,6 +19,7 @@ class AllProductsList(ModalView):
 
         self.parent_listrepresentation = ObjectProperty
         self.parent_productlist = ObjectProperty
+        self.product_details = ProductDetails()
 
         self.all_products = []
         self.current_products = []
