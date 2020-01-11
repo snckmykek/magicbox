@@ -70,7 +70,7 @@ class AllProductsList(ModalView):
                 Product.selected = (Product.name in current_products_names)
                 self.products_in_list.append(Product.name)
             except IndexError:
-                pass
+                Product.rating = 0
             Product.ids.representation.text = str(Product.name)
             Product.ids.selected.active = Product.selected
             self.ids.all_products_list.add_widget(Product)
