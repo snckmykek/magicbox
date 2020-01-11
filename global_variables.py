@@ -75,7 +75,7 @@ class CommonButton:
     height: int
 
     def __init__(self):
-        self.width = round(WINDOW.width / 10)
+        self.width = round(WINDOW.width)
         self.height = round(WINDOW.height / 10)
         self.size = (self.width, self.height)
 
@@ -88,10 +88,10 @@ class FlyingButton:
     background_color: tuple
 
     def __init__(self):
-        self.width = round(WINDOW.height / 10)
-        self.height = round(WINDOW.height / 10)
+        self.width = round(WINDOW.height / 8)
+        self.height = round(WINDOW.height / 8)
         self.size = (self.width, self.height)
-        self.diameter = round(WINDOW.height / 10)
+        self.diameter = round(WINDOW.height / 8)
 # end Button
 
 

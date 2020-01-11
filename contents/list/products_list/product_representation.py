@@ -38,11 +38,11 @@ class ProductRepresentation(Carousel):
             if self.ids.bought.active:
                 self.ids.representation.strikethrough = True
                 self.ids.representation.color = (.5, .5, .5, 1)
-                self.ids.user.color = (.5, .5, .5, 1)
+                self.ids.quantity.color = (.5, .5, .5, 1)
             else:
                 self.ids.representation.strikethrough = False
                 self.ids.representation.color = (0, 0, 0, 1)
-                self.ids.user.color = (0, 0, 0, 1)
+                self.ids.quantity.color = (0, 0, 0, 1)
 
         else:
             pass
@@ -53,3 +53,17 @@ class ProductRepresentation(Carousel):
 
             sqlite_requests.sqlite_delete_record('current_products', name=self.name, user=USER.name,
                                                  products_list=self.parent_listrepresentation)
+
+    def make_invisible_units(self):
+        pass  # still think
+        # color_quantity = list(self.ids.quantity.color)
+        # color_units = list(self.ids.units.color)
+        # if float(self.ids.quantity.text) == 0:
+        #     color_quantity[3] = 0
+        #     color_units[3] = 0
+        # else:
+        #     color_quantity[3] = 1
+        #     color_units[3] = 1
+        # self.ids.quantity.color = color_quantity
+        # self.ids.units.color = color_units
+

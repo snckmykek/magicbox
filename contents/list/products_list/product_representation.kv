@@ -12,14 +12,20 @@
         orientation: 'horizontal'
         Label:
             id: representation
-            size_hint_x: .65
+            size_hint_x: .60
             background_color: (.92, .91, .92, 1)
             background_normal: ''
             color: (0, 0, 0, 1)
         Label:
-            id: user
-            size_hint_x: .2
-            text: 'product'
+            id: quantity
+            size_hint_x: .10
+            text: '1'
+            color: (0,0,0,1)
+            on_text: root.make_invisible_units()
+        Label:
+            id: units
+            size_hint_x: .15
+            text: 'it'
             color: (0,0,0,1)
         CheckBox:
             id: bought

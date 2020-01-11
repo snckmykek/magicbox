@@ -11,7 +11,7 @@ class LongpressButton(Factory.Button):
     __events__ = ('on_long_press', 'on_short_press')
     is_short_press = False
 
-    long_press_time = Factory.NumericProperty(1)
+    long_press_time = Factory.NumericProperty(.3)
 
     def on_state(self, instance, value):
         if value == 'down':

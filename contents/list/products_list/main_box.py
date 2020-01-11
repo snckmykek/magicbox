@@ -39,6 +39,8 @@ class ProductsList(ModalView):
             except IndexError:
                 pass
             Product.ids.representation.text = str(Product.name)
+            Product.ids.quantity.text = str(Product.quantity)
+            Product.ids.units.text = str(Product.units)
             Product.ids.bought.active = Product.bought
             self.ids.products_list.add_widget(Product)
 
@@ -54,3 +56,18 @@ class ProductsList(ModalView):
 
     def delete_product_from_list(self, product):
         self.ids.products_list.remove_widget(product)
+
+    def clear_all(self):
+        for prod in self.ids.products_list.children.copy():
+            self.delete_product_from_list(prod)
+
+            sqlite_requests.sqlite_delete_record('current_products', name=prod.name, user=USER.name,
+                                                 products_list=prod.parent_listrepresentation)
+
+    def clear_purchased(self):
+        for prod in self.ids.products_list.children.copy():
+            if prod.bought:
+                self.delete_product_from_list(prod)
+
+                sqlite_requests.sqlite_delete_record('current_products', name=prod.name, user=USER.name,
+                                                     products_list=prod.parent_listrepresentation)

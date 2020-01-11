@@ -6,17 +6,28 @@
         BoxLayout:
             pos_hint: {'center_x': 0.5, 'top': 1}
             orientation: 'vertical'
-            BoxLayout:
+            ActionBar:
                 size_hint_y: .08
-                Label:
+                ActionView:
                     canvas.before:
                         Color:
                             rgba: (.03, .67, .14, 1)
                         Rectangle:
                             size: self.size
                             pos: self.pos
-                    color: (0, 0, 0, 1)
-                    text: 'Products'
+                    ActionPrevious:
+                        app_icon: ''
+                        color: (0, 0, 0, 1)
+                        title: 'Products'
+                        with_previous: False
+                    ActionOverflow:
+                        size_hint_x: .1
+                        MenuActionButton:
+                            text: 'clear all'
+                            on_press: root.clear_all()
+                        MenuActionButton:
+                            text: 'clear purchased'
+                            on_press: root.clear_purchased()
             ScrollView:
                 size_hint_y:.85
                 do_scroll_x: False
@@ -34,3 +45,11 @@
         FlyingButton:
             pos_hint: {'center_x': 0.80, 'top': 0.325}
             on_press: root.open_all_products_list()
+
+
+
+
+<MenuActionButton@ActionItem+CommonButton>:
+    size_hint_x: None
+
+<ActionStub@ActionItem+Widget>:

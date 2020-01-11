@@ -1,6 +1,7 @@
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang.builder import Builder
+from kivy.uix.modalview import ModalView
 from global_variables import LIST, USER
 from sqlite_requests import sqlite_requests
 import time
@@ -14,6 +15,8 @@ class AllProductRepresentation(BoxLayout):
 
     def __init__(self, **kwargs):
         super(AllProductRepresentation, self).__init__(**kwargs)
+
+        self.quantity_changer = QuantityChanger()
 
         self.height = LIST.product_representation.height
 
@@ -74,3 +77,30 @@ class AllProductRepresentation(BoxLayout):
     def open_ProductDetails(self):
         self.parent_allproducts.product_details.parent_product = self
         self.parent_allproducts.product_details.open()
+
+    def change_selected_with_quantity(self):
+        if not self.ids.selected.active:
+            self.quantity_changer.product = self
+            self.quantity_changer.open()
+        else:
+            self.ids.selected.active = False
+
+
+class QuantityChanger(ModalView):
+
+    def __init__(self, **kwargs):
+        super(QuantityChanger, self).__init__(**kwargs)
+
+        self.product = ObjectProperty
+
+    def on_pre_open(self):
+        self.ids.prod_name.text = self.product.name
+        self.ids.quantity.text = str(self.product.quantity)
+        self.ids.units.text = self.product.units
+        self.ids.quantity.select_all()
+
+    def close_QuantityChanger(self):
+        self.product.quantity = self.ids.quantity.text
+        self.product.units = self.ids.units.text
+        self.product.ids.selected.active = True
+        self.dismiss()

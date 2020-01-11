@@ -16,13 +16,41 @@
         color: (0, 0, 0, 1)
         size_hint_x: .65
         on_short_press: selected.active = not selected.active
-        on_long_press: root.open_ProductDetails()
-    Label:
+        on_long_press: root.change_selected_with_quantity()
+    LongpressButton:
         id: units
+        background_normal: ''
+        background_down: ''
+        background_color: (1, 1, 1, 1)
+        color: (0, 0, 0, 1)
         size_hint_x: .2
         text: 'all_product'
-        color: (0,0,0,1)
+        on_long_press: root.open_ProductDetails()
     CheckBox:
         id: selected
         size_hint_x: .15
         on_active: root.update_record_bd()
+
+
+<QuantityChanger>:
+    size_hint: (.8, .8)
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: prod_name
+            text: ''
+        BoxLayout:
+            Label:
+                text: 'quantity:'
+            TextInput:
+                id: quantity
+                text: '2'
+        BoxLayout:
+            Label:
+                text: 'units:'
+            TextInput:
+                id: units
+                text: ''
+        CommonButton:
+            text: 'OK'
+            on_release: root.close_QuantityChanger()
