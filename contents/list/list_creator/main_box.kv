@@ -10,7 +10,7 @@
             color: (0, 0, 0, 1)
             text: 'Some list'
             on_focus:
-                    if self.focus: self.text = ''
+                if self.focus: self.text = ''
         CommonButton:
             on_press: root.add_list(listname.text)
             text: 'Add'
