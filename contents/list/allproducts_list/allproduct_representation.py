@@ -85,7 +85,7 @@ class AllProductRepresentation(BoxLayout):
         else:
             self.ids.selected.active = False
 
-
+ 
 class QuantityChanger(ModalView):
 
     def __init__(self, **kwargs):
