@@ -16,16 +16,16 @@ class ListCreator(ModalView):
         parentlist: object  # Object, which call this Object
 
     def add_list(self, text='No name'):  # Adds List (Product list) in List of Products list
-        LR = ListRepresentation()
-        LR.ids.name.text = str(text)
-        LR.parent_box = self.parentlist
+        self.LR.ids.name.text = str(text)
+        self.LR.parent_box = self.parentlist
+
+        self.parentlist.ids.list_of_products_lists.add_widget(self.LR)
 
         sqlite_requests.sqlite_fill_table('lists', str(text), user=USER.name)
-
-        self.parentlist.ids.list_of_products_lists.add_widget(LR)
 
         self.dismiss()
 
     def on_pre_open(self):
+        self.LR = ListRepresentation()  # Разбить на другой поток, так не будет лага
         self.ids.name = 'Some list'
 
