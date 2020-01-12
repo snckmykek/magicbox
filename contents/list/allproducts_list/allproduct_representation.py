@@ -95,6 +95,7 @@ class QuantityChanger(ModalView):
 
     def on_pre_open(self):
         self.ids.prod_name.text = self.product.name
+        self.ids.quantity.text = 2
         self.ids.units.text = self.product.units
 
     def close_QuantityChanger(self):
