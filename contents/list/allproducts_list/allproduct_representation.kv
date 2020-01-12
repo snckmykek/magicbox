@@ -46,8 +46,10 @@
             TextInput:
                 id: quantity
                 text: '2'
+                input_type: 'number'
                 on_focus:
                     if self.focus: self.text = ''
+
         BoxLayout:
             Label:
                 text: 'units:'

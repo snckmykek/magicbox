@@ -25,6 +25,3 @@ class ListCreator(ModalView):
 
         self.dismiss()
 
-    def test(self, button):
-        button.text = 'win size: ' + str(WINDOW.size) + ' \n '\
-                      'f_but size: ' + str(BUTTON.flying_button.size) + ' \n '

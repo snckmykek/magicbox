@@ -8,13 +8,11 @@
         CommonTextInput:
             id: listname
             color: (0, 0, 0, 1)
+            keyboard_mode: 'managed'
             text: 'Some list'
             on_focus:
                 if self.focus: self.text = ''
         CommonButton:
             on_press: root.add_list(listname.text)
             text: 'Add'
-        CommonButton:
-            on_press: root.test(self)
-            text: 'test'
         Widget:
