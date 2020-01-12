@@ -96,8 +96,6 @@ class QuantityChanger(ModalView):
     def on_pre_open(self):
         self.ids.prod_name.text = self.product.name
         self.ids.units.text = self.product.units
-        self.ids.quantity.focus = True
-        self.ids.quantity.select_all()
 
     def close_QuantityChanger(self):
         self.product.quantity = self.ids.quantity.text
