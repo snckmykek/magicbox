@@ -2,13 +2,18 @@
     orientation: 'horizontal'
     height: 80
     size_hint_y: None
-    Label:
+    CommonButton:
         size_hint_x: .7
-        id: representation
-        background_color: (.92, .91, .92, 1)
+        id: name
+        background_color: (.92, .91, .92, 0)
         background_normal: ''
         color: (0, 0, 0, 1)
-    Label:
+        on_press: root.open_ProductsList()
+    LongpressButton:
+        background_down: ''
+        background_normal: ''
+        background_color: (0, 0, 0, 0)
         size_hint_x: .3
-        text: 'list_box'
+        text: 'delete'
         color: (0,0,0,1)
+        on_press: root.delete_list()

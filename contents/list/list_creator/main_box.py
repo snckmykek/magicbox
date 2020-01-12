@@ -17,11 +17,15 @@ class ListCreator(ModalView):
 
     def add_list(self, text='No name'):  # Adds List (Product list) in List of Products list
         LR = ListRepresentation()
-        LR.ids.representation.text = str(text)
+        LR.ids.name.text = str(text)
+        LR.parent_box = self.parentlist
 
         sqlite_requests.sqlite_fill_table('lists', str(text), user=USER.name)
 
         self.parentlist.ids.list_of_products_lists.add_widget(LR)
 
         self.dismiss()
+
+    def on_pre_open(self):
+        self.ids.name = 'Some list'
 

@@ -22,12 +22,18 @@ class List(BoxLayout):
         for current_list in lists:
             if current_list[0] == USER.name:
                 LR = ListRepresentation()
-                LR.ids.representation.text = current_list[1]
+                LR.ids.name.text = current_list[1]
+                LR.parent_box = self
                 self.ids.list_of_products_lists.add_widget(LR)
 
     def open_ListCreator(self):
         self.list_creator.parentlist = self  # Only for transfer List to ListCreator
         self.list_creator.open()
+
+    def delete_list(self, lst):
+        self.ids.list_of_products_lists.remove_widget(lst)
+
+        sqlite_requests.sqlite_delete_record('lists', name=lst.ids.name.text, user=USER.name)
 
 
 ListBox = List()
