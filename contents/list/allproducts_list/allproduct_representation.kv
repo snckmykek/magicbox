@@ -46,7 +46,11 @@
             TextInput:
                 id: quantity
                 text: '2'
-                on_focus: self.focus = True
+                keyboard_mode: 'managed'
+                is_focusable: True
+                focus: True
+                keyboard_on_key_down:
+                    self.show_keyboard()
         BoxLayout:
             Label:
                 text: 'units:'
