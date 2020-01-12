@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/contents/list/allproducts_list/allproduct_representation.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/allproducts_list/allproduct_representation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/list/list_creator/main_box.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/list_creator/main_box.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/list/list_creator/main_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/list_creator/main_box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/list/main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/main_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +288,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/contents/list/list_creator/main_box.py</url>
-          <line>19</line>
+          <line>22</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

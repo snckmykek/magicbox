@@ -27,6 +27,7 @@ class List(BoxLayout):
 
     def open_ListCreator(self):
         self.list_creator.parentlist = self  # Only for transfer List to ListCreator
+        self.list_creator.
         self.list_creator.open()
 
 
