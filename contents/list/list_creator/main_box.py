@@ -16,8 +16,8 @@ class ListCreator(ModalView):
         parentlist: object  # Object, which call this Object
 
     def on_pre_open(self):
-        self.ids.listname.focus = True
         self.ids.listname.select_all()
+        self.ids.listname.focus = True
 
     def add_list(self, text='No name'):  # Adds List (Product list) in List of Products list
         LR = ListRepresentation()
