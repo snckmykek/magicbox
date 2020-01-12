@@ -33,7 +33,8 @@
 
 
 <QuantityChanger>:
-    size_hint: (.8, .8)
+    pos_hint: {'top': .95}
+    size_hint: (.8, .4)
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -45,6 +46,7 @@
             TextInput:
                 id: quantity
                 text: '2'
+                focus: True
         BoxLayout:
             Label:
                 text: 'units:'
