@@ -84,7 +84,6 @@ class AllProductsList(ModalView):
                 continue
             Product = self.FBL.children[index]  # AllProductRepresentation()
             self.FBL.height = self.FBL.height + self.FBL.children[index].height  # test
-            print(self.FBL.height)
             Product.parent_listrepresentation = self.parent_listrepresentation
             Product.parent_allproducts = self
             Product.name = product[0]
