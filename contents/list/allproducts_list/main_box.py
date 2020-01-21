@@ -11,6 +11,15 @@ import time
 Builder.load_file(r'contents/list/allproducts_list/main_box.kv')
 
 class Test(AllProductRepresentation):
+    '''
+
+    АЛЁ ПИДОРАС НЕ ЗАБУДЬ ВАЖНУЮ ИНФУ ПРИЁМ:
+    КОГДА ОТКРЫВАЕТСЯ ЭЛЕМЕНТ ДЛЯ СОЗДАНИЯ СПИСКА, ТАМ ПОДВИСАЕТ КАК КАК ОТРАБАТЫВАЕТ ВЕСЬ КОД
+    НАПРИМЕР ОТРАБАТЫВАЕТ FirstBoxLayout И ПРОЧЕЕ. НАДО ПОСМОТРЕТЬ ПОЧЕМУ И НАХУЙ ЭТО УБРАТЬ (ИЛИ ЭТО Я СПЕЦОМ
+    СДЕЛАЛ ЧТОБЫ ПРИ ЗАКРЫТИИ НЕ ЛАГАЛО. НУ КОРОЧЕ НАДО В ДРУГОЙ ПОТОК ВЕСЬ ЭТОТ ИМПОРТ ВЫНЕСТИ
+    ЧТОБЫ ПОКА ЧЕЛ ТУПИТ 2 СЕКИ НАД СОЗДАНИЕМ ИМЕНИ, ВСЯ ЗАЛУПА ЗАИМПОРТИРОВАЛАСЬ)
+
+    '''
     pass
 
 class FirstBoxLayout(BoxLayout):
@@ -134,7 +143,7 @@ class AllProductsList(ModalView):
         self.fill_allproducts_list()
 
     def add_product(self):
-        sqlite_requests.sqlite_fill_table('personal_products', self.ids.search.text, 'шт', USER.name,
+        sqlite_requests.sqlite_fill_table('personal_products', self.ids.search.text[0].upper()+self.ids.search.text[1:], 'шт', USER.name,
                                           0, 0, 0, 0, round(time.time()), '')
         self.ids.search.text = ''
         self.update_sort()
