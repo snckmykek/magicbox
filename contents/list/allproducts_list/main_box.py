@@ -19,6 +19,8 @@ class Test(AllProductRepresentation):
     СДЕЛАЛ ЧТОБЫ ПРИ ЗАКРЫТИИ НЕ ЛАГАЛО. НУ КОРОЧЕ НАДО В ДРУГОЙ ПОТОК ВЕСЬ ЭТОТ ИМПОРТ ВЫНЕСТИ
     ЧТОБЫ ПОКА ЧЕЛ ТУПИТ 2 СЕКИ НАД СОЗДАНИЕМ ИМЕНИ, ВСЯ ЗАЛУПА ЗАИМПОРТИРОВАЛАСЬ)
 
+    еще можно переписать кнопки AllProductsToggleButton чтобы они не он_пресс работали, а он_стате, тогда нужно
+    одну общуу прописать функцию для AllProductsToggleButton
     '''
     pass
 
@@ -81,7 +83,7 @@ class AllProductsList(ModalView):
         self.FBL.height = 0
         for index in range(20):  # self.products_to_show):
             try:
-                product = self.all_products[index]
+                product = self.all_products[19 - index]
             except IndexError:
                 # test
                 Product = self.FBL.children[index]
@@ -92,7 +94,7 @@ class AllProductsList(ModalView):
                 Product.ids.selected.active = False
                 continue
             Product = self.FBL.children[index]  # AllProductRepresentation()
-            self.FBL.height = self.FBL.height + self.FBL.children[index].height  # test
+            self.FBL.height = self.FBL.height + self.FBL.children[index].height  # test мб нахуй не надо
             Product.parent_listrepresentation = self.parent_listrepresentation
             Product.parent_allproducts = self
             Product.name = product[0]
@@ -146,7 +148,11 @@ class AllProductsList(ModalView):
         sqlite_requests.sqlite_fill_table('personal_products', self.ids.search.text[0].upper()+self.ids.search.text[1:], 'шт', USER.name,
                                           0, 0, 0, 0, round(time.time()), '')
         self.ids.search.text = ''
-        self.update_sort()
+        # test пизда говно решение но я хочу спать переделай нормальн
+        self.ids.last_sorting.state = 'down'
+        self.ids.popular_sorting.state = 'normal'
+        self.ids.abc_sorting.state = 'normal'
+        self.update_sort('last')
 
     def delete_product_from_list(self, product):
         self.ids.all_products_list.remove_widget(product)
