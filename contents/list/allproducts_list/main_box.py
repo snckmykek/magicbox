@@ -22,7 +22,7 @@ class FirstBoxLayout(BoxLayout):
         self.orientation = 'vertical'
         self.height = 0
 
-        for i in range(100):
+        for i in range(20):
             test = Test()
             self.add_widget(test)
             self.height = self.height + test.height
