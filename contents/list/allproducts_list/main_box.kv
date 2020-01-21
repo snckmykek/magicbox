@@ -60,7 +60,7 @@
             size_hint_y: .73
             do_scroll_x: False
             effect_cls: 'DampedScrollEffect'
-            on_touch_up: if self.effect_y.overscroll > 50: root.show_more_products()
+#            on_touch_up: if self.effect_y.overscroll > 50: root.show_more_products()
             GridLayout:
                 id: all_products_list
                 canvas.before:
@@ -77,6 +77,17 @@
             size_hint_y: .07
             on_press: root.dismiss()
             text: 'Complete'
+
+
+<FirstBoxLayout>:
+    size_hint_y: None
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (.5, .5, .5, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
 
 
 <AllProductsToggleButton@ToggleButton>:
