@@ -6,25 +6,9 @@ from global_variables import LIST, USER
 from contents.list.allproducts_list.allproduct_representation import AllProductRepresentation
 from contents.list.product_details.main_box import ProductDetails
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.widget import Widget
 import time
 
 Builder.load_file(r'contents/list/allproducts_list/main_box.kv')
-
-class Test(AllProductRepresentation):
-    pass
-
-class FirstBoxLayout(BoxLayout):
-
-    def __init__(self, **kwargs):
-        super(FirstBoxLayout, self).__init__(**kwargs)
-
-        self.height = 0
-
-        for i in range(20):
-            test = Test()
-            self.add_widget(test)
-            self.height = self.height + test.height
 
 
 class AllProductsList(ModalView):
@@ -32,7 +16,9 @@ class AllProductsList(ModalView):
     def __init__(self, **kwargs):
         super(AllProductsList, self).__init__(**kwargs)
 
-        self.FBL = FirstBoxLayout()
+        self.FBL = BoxLayout()
+        self.FBL.size_hint_y = None
+        self.FBL.orientation = 'vertical'
 
         self.ids.all_products_list.spacing = LIST.list_representation.spacing
 
@@ -63,6 +49,10 @@ class AllProductsList(ModalView):
         self.current = False
 
     def fill_allproducts_list(self):
+        # ++ test
+        self.FBL.clear_widgets()
+        self.FBL.height = 0
+
         self.all_products = sqlite_requests.get_all_products(USER.name, self.search, self.sort,
                                                              self.products_to_show, self.products_in_list)
         self.current_products = sqlite_requests.get_current_products(USER.name,
@@ -73,14 +63,14 @@ class AllProductsList(ModalView):
                 product = self.all_products[19 - index]
             except IndexError:
                 # test
-                Product = self.FBL.children[index]
-                Product.parent_listrepresentation = self.parent_listrepresentation
-                Product.parent_allproducts = self
-                Product.ids.units.text = ''
-                Product.ids.representation.text = ''
-                Product.ids.selected.active = False
+                # Product = self.FBL.children[index]
+                # Product.parent_listrepresentation = self.parent_listrepresentation
+                # Product.parent_allproducts = self
+                # Product.ids.units.text = ''
+                # Product.ids.representation.text = ''
+                # Product.ids.selected.active = False
                 continue
-            Product = self.FBL.children[index]  # AllProductRepresentation()
+            Product = AllProductRepresentation()
             Product.parent_listrepresentation = self.parent_listrepresentation
             Product.parent_allproducts = self
             Product.name = product[0]
@@ -99,6 +89,8 @@ class AllProductsList(ModalView):
                 Product.rating = 0
             Product.ids.representation.text = str(Product.name)
             Product.ids.selected.active = Product.selected
+            self.FBL.add_widget(Product)
+            self.FBL.height =  self.FBL.height + Product.height
         self.ids.all_products_list.add_widget(self.FBL)
 
     def on_pre_open(self):
