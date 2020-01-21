@@ -65,12 +65,12 @@ class AllProductsList(ModalView):
 
     def fill_allproducts_list(self):
         self.all_products = sqlite_requests.get_all_products(USER.name, self.search, self.sort,
-                                                             100, self.products_in_list)  #self.products_to_show, self.products_in_list)
+                                                             20, self.products_in_list)  #self.products_to_show, self.products_in_list)
         self.current_products = sqlite_requests.get_current_products(USER.name,
                                                                      self.parent_listrepresentation)
         current_products_names = [prod[0] for prod in self.current_products]
         self.FBL.height = 0
-        for index in range(100):  # self.products_to_show):
+        for index in range(20):  # self.products_to_show):
             try:
                 product = self.all_products[index]
             except IndexError:
