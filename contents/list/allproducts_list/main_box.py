@@ -80,7 +80,7 @@ class AllProductsList(ModalView):
         self.current_products = sqlite_requests.get_current_products(USER.name,
                                                                      self.parent_listrepresentation)
         current_products_names = [prod[0] for prod in self.current_products]
-        self.FBL.height = 0
+        # self.FBL.height = 0
         for index in range(20):  # self.products_to_show):
             try:
                 product = self.all_products[19 - index]
@@ -94,7 +94,7 @@ class AllProductsList(ModalView):
                 Product.ids.selected.active = False
                 continue
             Product = self.FBL.children[index]  # AllProductRepresentation()
-            self.FBL.height = self.FBL.height + self.FBL.children[index].height  # test мб нахуй не надо
+            # self.FBL.height = self.FBL.height + self.FBL.children[index].height  # test мб нахуй не надо
             Product.parent_listrepresentation = self.parent_listrepresentation
             Product.parent_allproducts = self
             Product.name = product[0]
