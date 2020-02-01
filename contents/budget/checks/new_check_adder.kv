@@ -1,0 +1,96 @@
+<CheckAdder>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .1
+            Button:
+                id: file
+                size_hint_x: .8
+                on_press: root.choose_file()
+            Button:
+                size_hint_x: .2
+                text: 'Go'
+                on_press: root.go()
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: date
+                text:
+            Label:
+                id: shop_name
+                text:
+#            Label:
+#                id: shop_address
+#                text:
+            Label:
+                id: sum
+                text:
+        ScrollView:
+            size_hint_y: .65
+            do_scroll_x: False
+            GridLayout:
+                id: products_in_check
+                canvas.before:
+                    Color:
+                        rgba: (.92, .91, .92, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                cols: 1
+                spacing: 5
+                size_hint_y: None
+                height: self.minimum_height
+        CommonButton:
+            size_hint_y: .1
+            text: 'Add this check'
+            color: (0,0,0,1)
+            on_press: root.add_this_check()
+
+
+<CategoryAdder>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: label
+            size_hint_y: .07
+            text: ''
+        BoxLayout:
+            size_hint_y: .15
+            CommonTextInput:
+                id: search
+                size_hint_x: .85
+                on_text: root.search()
+            Button:
+                size_hint_x: .15
+                text: "+"
+                on_press: root.add_categoryI()
+        GridLayout:
+            id: categories
+            size_hint_y: .60
+            cols: 2
+            rows: 5
+        CommonButton:
+            size_hint_y: .1
+            text: 'Close'
+            on_press: root.close()
+
+
+<LoadDialog>:
+    title: 'load file'
+    size_hint: .9, .9
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.dismiss()
+
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)

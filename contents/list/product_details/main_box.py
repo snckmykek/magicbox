@@ -27,7 +27,7 @@ class ProductDetails(ModalView):
         self.dismiss()
 
     def save_changes(self):
-        if sqlite_requests.is_product_in_table('personal_products', USER.name, self.parent_product.name):
+        if not sqlite_requests.get_products_not_in_table('personal_products', USER.name, [self.parent_product.name]):
             sqlite_requests.sqlite_update_record('personal_products',
                                                  {'name': self.ids.name.text,
                                                   'units': self.ids.units.text,

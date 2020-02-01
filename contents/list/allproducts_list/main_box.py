@@ -10,9 +10,9 @@ import time
 
 Builder.load_file(r'contents/list/allproducts_list/main_box.kv')
 
+
 class Test(AllProductRepresentation):
     '''
-
     АЛЁ ПИДОРАС НЕ ЗАБУДЬ ВАЖНУЮ ИНФУ ПРИЁМ:
     КОГДА ОТКРЫВАЕТСЯ ЭЛЕМЕНТ ДЛЯ СОЗДАНИЯ СПИСКА, ТАМ ПОДВИСАЕТ КАК КАК ОТРАБАТЫВАЕТ ВЕСЬ КОД
     НАПРИМЕР ОТРАБАТЫВАЕТ FirstBoxLayout И ПРОЧЕЕ. НАДО ПОСМОТРЕТЬ ПОЧЕМУ И НАХУЙ ЭТО УБРАТЬ (ИЛИ ЭТО Я СПЕЦОМ
@@ -23,6 +23,7 @@ class Test(AllProductRepresentation):
     одну общуу прописать функцию для AllProductsToggleButton
     '''
     pass
+
 
 class FirstBoxLayout(BoxLayout):
 
@@ -76,7 +77,8 @@ class AllProductsList(ModalView):
 
     def fill_allproducts_list(self):
         self.all_products = sqlite_requests.get_all_products(USER.name, self.search, self.sort,
-                                                             20, self.products_in_list)  #self.products_to_show, self.products_in_list)
+                                                             20,
+                                                             self.products_in_list)  # self.products_to_show, self.products_in_list)
         self.current_products = sqlite_requests.get_current_products(USER.name,
                                                                      self.parent_listrepresentation)
         current_products_names = [prod[0] for prod in self.current_products]
@@ -145,8 +147,9 @@ class AllProductsList(ModalView):
         self.fill_allproducts_list()
 
     def add_product(self):
-        sqlite_requests.sqlite_fill_table('personal_products', self.ids.search.text[0].upper()+self.ids.search.text[1:], 'шт', USER.name,
-                                          0, 0, 0, 0, round(time.time()), '')
+        sqlite_requests.sqlite_fill_table('personal_products',
+                                          self.ids.search.text[0].upper() + self.ids.search.text[1:], 'шт', USER.name,
+                                          0, 0, 0, 0, round(time.time()), '', is_category=True)
         self.ids.search.text = ''
         # test пизда говно решение но я хочу спать переделай нормальн
         self.ids.last_sorting.state = 'down'

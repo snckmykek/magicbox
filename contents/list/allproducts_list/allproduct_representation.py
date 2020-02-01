@@ -45,11 +45,13 @@ class AllProductRepresentation(BoxLayout):
             self.last_use = round(time.time())
             self.frequency_of_use += 1
 
-        if sqlite_requests.is_product_in_table('current_products', USER.name,
-                                               self.name, self.parent_listrepresentation) is self.selected:
+        if (not sqlite_requests.get_products_not_in_table('current_products', USER.name,
+                                               [self.name], self.parent_listrepresentation)) is self.selected:
             return  # If called by creating of Product in on_pre_open of AllProductsList
+                    # Че это ваще за хуйня выше? Можно как-то перестроить работу проги, чтобы не было этот ебанины?
+                    # Она ваще всё еще есть? Разве я не переделал это? ._.
 
-        if sqlite_requests.is_product_in_table('personal_products', USER.name, self.name):
+        if not sqlite_requests.get_products_not_in_table('personal_products', USER.name, [self.name]):
             sqlite_requests.sqlite_update_record('personal_products',
                                                  {
                                                      'frequency_of_use': self.frequency_of_use,
@@ -58,7 +60,7 @@ class AllProductRepresentation(BoxLayout):
                                                  {'user': USER.name, 'name': self.name})
         else:
             sqlite_requests.sqlite_fill_table('personal_products', self.name, self.units, user=USER.name,
-                                              frequency_of_use=1, last_use=round(time.time()))
+                                              frequency_of_use=1, last_use=round(time.time()), is_category=True)
 
         if self.selected:
             sqlite_requests.sqlite_fill_table('current_products', self.name, self.units, user=USER.name,
