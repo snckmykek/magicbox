@@ -84,13 +84,14 @@
         orientation: "vertical"
         FileChooserListView:
             id: filechooser
+            path: '/data/data/org.test.myapp'
         BoxLayout:
             size_hint_y: None
             height: 30
-            Button:
+            CommonButton:
                 text: "Cancel"
                 on_release: root.dismiss()
 
-            Button:
+            CommonButton:
                 text: "Load"
                 on_release: root.load(filechooser.path, filechooser.selection)

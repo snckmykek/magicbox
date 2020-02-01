@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/13.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contents/budget/checks/budget_product_representation.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contents/budget/checks/budget_product_representation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test file chooser/editor.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test file chooser/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bukre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bukre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/havka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/havka.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/budget/budget.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/main_page.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/budget/budget.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/allproducts_list/allproduct_representation.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/allproducts_list/allproduct_representation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/allproducts_list/main_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/allproducts_list/main_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contents/list/product_details/main_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/list/product_details/main_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_havka.db" beforeDir="false" afterPath="$PROJECT_DIR$/database_havka.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite_requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite_requests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.kv" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,16 +344,6 @@
           <url>file://$PROJECT_DIR$/test file chooser/main.py</url>
           <line>28</line>
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/contents/budget/checks/new_check_adder.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/contents/budget/checks/new_check_adder.py</url>
-          <line>131</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

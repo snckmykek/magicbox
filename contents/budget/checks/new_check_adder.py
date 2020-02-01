@@ -129,5 +129,8 @@ class LoadDialog(Popup):
         self.button = ''
 
     def load(self, path, selection):
-        self.button.text = selection[0].replace('\\', '/').replace('//', '/')
+        try:
+            self.button.text = selection[0].replace('\\', '/').replace('//', '/')
+        except:
+            self.button.text = selection[0]
         self.dismiss()
