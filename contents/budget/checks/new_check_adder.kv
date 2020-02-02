@@ -63,7 +63,7 @@
             Button:
                 size_hint_x: .15
                 text: "+"
-                on_press: root.add_categoryI()
+                on_press: root.add_category()
         GridLayout:
             id: categories
             size_hint_y: .60
@@ -84,7 +84,7 @@
         orientation: "vertical"
         FileChooserListView:
             id: filechooser
-#            path: '/data'
+            path: '/data/data'
         BoxLayout:
             size_hint_y: None
             height: 30

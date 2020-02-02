@@ -120,6 +120,9 @@ class CategoryAdder(ModalView):
         self.dismiss()
         self.parent_check.dismiss()
 
+    def add_category(self):
+        pass
+
 
 class LoadDialog(Popup):
 
