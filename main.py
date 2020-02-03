@@ -1,5 +1,6 @@
 __version__ = "0.0.1"
 
+
 from kivy.app import App
 
 from kivy.config import Config
@@ -21,6 +22,13 @@ class MainBoxLayout(BoxLayout):
 
     def __init__(self, **kwargs):
         super(MainBoxLayout, self).__init__(**kwargs)
+
+        try:
+            from android.permissions import request_permissions, Permission
+            request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
+                                 Permission.READ_EXTERNAL_STORAGE])
+        except:
+            pass
 
     def set_current_slide(self, button):
         ContentBox = self.ids.content_box
