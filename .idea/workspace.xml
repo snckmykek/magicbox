@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3c7a952-1ef0-43f9-ae35-e98a86aa80aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.py" beforeDir="false" afterPath="$PROJECT_DIR$/contents/budget/checks/new_check_adder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

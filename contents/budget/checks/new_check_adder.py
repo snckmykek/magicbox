@@ -9,6 +9,8 @@ from sqlite_requests import sqlite_requests
 from global_variables import USER
 from kivy.uix.popup import Popup
 
+from android.permissions import request_permissions, Permission
+
 Builder.load_file(r'contents/budget/checks/new_check_adder.kv')
 
 
@@ -53,6 +55,9 @@ class CheckAdder(ModalView):
             self.ids.products_in_check.add_widget(PR)
 
     def choose_file(self):
+        request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
+                             Permission.READ_EXTERNAL_STORAGE])
+
         LD = LoadDialog()
         LD.button = self.ids.file
         LD.open()
@@ -130,10 +135,6 @@ class LoadDialog(Popup):
         super(LoadDialog, self).__init__(**kwargs)
 
         self.button = ''
-
-        from android.permissions import request_permissions, Permission
-        request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
-                             Permission.READ_EXTERNAL_STORAGE])
 
     def load(self, path, selection):
         try:
