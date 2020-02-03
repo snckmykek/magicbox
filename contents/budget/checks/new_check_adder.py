@@ -9,7 +9,12 @@ from sqlite_requests import sqlite_requests
 from global_variables import USER
 from kivy.uix.popup import Popup
 
-from android.permissions import request_permissions, Permission
+import time
+
+try:
+    from android.permissions import request_permissions, Permission
+except:
+    pass
 
 Builder.load_file(r'contents/budget/checks/new_check_adder.kv')
 
@@ -27,12 +32,13 @@ class CheckAdder(ModalView):
         self.sum = ''
         self.products = []
 
-    def go(self):
+        self.data_list = []
+
+    def next_check(self):
         try:
-            with open(self.ids.file.text, 'r', encoding='utf-8') as read_json:
-                data = json.load(read_json)
+            data = json.loads(self.data_list[0])
         except:
-            return
+            return False
 
         self.date = data['date']
         self.shop_name = data['shopName']
@@ -45,6 +51,9 @@ class CheckAdder(ModalView):
         self.ids.sum.text = str(self.sum)
         self.products = data['products']
 
+        self.data_list.remove(self.data_list[0])
+
+        self.ids.products_in_check.clear_widgets()
         for prod in self.products:
             PR = BudgetProductRepresentation()
             PR.ids.name.text = prod['name']
@@ -54,13 +63,26 @@ class CheckAdder(ModalView):
 
             self.ids.products_in_check.add_widget(PR)
 
-    def choose_file(self):
-        a = request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
-                             Permission.READ_EXTERNAL_STORAGE])
-        
-        print(a)
+        return True
 
+    def go(self):
+        try:
+            # with open(self.ids.file.text, 'r', encoding='utf-8') as read_json:
+            #     data = json.load(read_json)
+            self.data_list = self.ids.file.text.split('\n')
+        except:
+            return
+
+        self.next_check()
+
+    def choose_file(self):
         LD = LoadDialog()
+        try:
+            request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
+                                 Permission.READ_EXTERNAL_STORAGE])
+            LD.ids.filechooser.path = '/data/data/org.test.myapp'
+        except:
+            pass
         LD.button = self.ids.file
         LD.open()
 
@@ -75,10 +97,15 @@ class CheckAdder(ModalView):
         if new_products:
             self.category_adder.open()
         else:
+            self.update_bd_and_try_next_check()
+
+    def update_bd_and_try_next_check(self):
+        self.update_bd()
+
+        if not self.next_check():
             self.dismiss()
 
-    def on_pre_dismiss(self):
-
+    def update_bd(self):
         # Нужно сделать проверку на дубли по чеку, а тут оптимизивать вставку в БД, а не ебенить в цикле
         # Пока вместо проверок и тд тупо удаляются данные по чеку и перезаписываются
         sqlite_requests.sqlite_delete_record('budget_products', date=self.date, shop_name=self.shop_name)
@@ -124,11 +151,14 @@ class CategoryAdder(ModalView):
             self.close()
 
     def close(self):
+        self.parent_check.update_bd_and_try_next_check()
         self.dismiss()
-        self.parent_check.dismiss()
 
     def add_category(self):
-        pass
+        sqlite_requests.sqlite_fill_table('personal_products',
+                                          self.ids.search.text[0].upper() + self.ids.search.text[1:], 'шт', USER.name,
+                                          0, 0, 0, 0, round(time.time()), '', is_category=True)
+        self.search()
 
 
 class LoadDialog(Popup):

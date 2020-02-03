@@ -3,10 +3,10 @@
         orientation: 'vertical'
         BoxLayout:
             size_hint_y: .1
-            Button:
+            TextInput:
                 id: file
                 size_hint_x: .8
-                on_press: root.choose_file()
+#                on_press: root.choose_file()
             Button:
                 size_hint_x: .2
                 text: 'Go'
@@ -59,6 +59,7 @@
             CommonTextInput:
                 id: search
                 size_hint_x: .85
+                on_touch_down: self.text = ''
                 on_text: root.search()
             Button:
                 size_hint_x: .15
@@ -84,7 +85,6 @@
         orientation: 'vertical'
         FileChooserListView:
             id: filechooser
-            path: '/data/data/org.test.myapp'
         BoxLayout:
             size_hint_y: None
             height: 30

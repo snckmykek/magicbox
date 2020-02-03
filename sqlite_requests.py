@@ -75,8 +75,8 @@ class Database(object):
 
     def fill_budget_products_table(self, date, shop_name, shop_address, product_name, quantity, price):
         self.cur.execute('INSERT INTO budget_products VALUES("{0}","{1}","{2}","{3}","{4}","{5}","{6}",'
-                         '"{7}")'.format(date, shop_name, shop_address, product_name,
-                                         quantity, price, shop_name.upper(), product_name.upper()))
+                         '"{7}")'.format(date, shop_name.replace('"', ''), shop_address, product_name,
+                                         quantity, price, shop_name.replace('"', '').upper(), product_name.upper()))
         self.con.commit()
 
     def sqlite_fill_table(self, table_name, name, units='шт', user='noname', rating=0.0, average_rating=0.0,
@@ -117,6 +117,7 @@ class Database(object):
         # params = {col1: val1, col2: val2}
         request = 'DELETE FROM ' + table_name + ' WHERE "'
         for col, val in params.items():
+            val = val.replace('"', '')
             request += col + '" = "' + val + '" AND "'
         request = request[:-6]  # Cutting last ' AND '
         self.cur.execute(request)
@@ -131,6 +132,7 @@ class Database(object):
         request = request[:-3]  # Cutting last ', "'
         request += ' WHERE "'
         for col, val in where.items():
+            val = val.replace('"', '')
             request += col + '" = "' + str(val) + '" AND "'
         request = request[:-6]  # Cutting last ' AND '
         self.cur.execute(request)
@@ -142,7 +144,7 @@ class Database(object):
         return [col for col in cols if col not in useless]
 
     def get_all_products(self, user, search='', sort='popular', products_to_show=10, products_in_list=[],
-                         only_categories=True):
+                         only_categories=True, only_not_categories=False):
 
         # for personal products
         cols = self.get_list_of_columns_without_useless('personal_products', 'user')
@@ -161,6 +163,8 @@ class Database(object):
 
         if only_categories:
             request += ' AND is_category = "True"'
+        elif only_not_categories:
+            request += ' AND is_category = "False"'
 
         if sort == 'popular':
             request += ' ORDER BY frequency_of_use DESC'
