@@ -131,6 +131,10 @@ class LoadDialog(Popup):
 
         self.button = ''
 
+        from android.permissions import request_permissions, Permission
+        request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
+                             Permission.READ_EXTERNAL_STORAGE])
+
     def load(self, path, selection):
         try:
             self.button.text = selection[0].replace('\\', '/').replace('//', '/')
