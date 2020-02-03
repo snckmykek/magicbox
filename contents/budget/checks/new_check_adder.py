@@ -55,8 +55,10 @@ class CheckAdder(ModalView):
             self.ids.products_in_check.add_widget(PR)
 
     def choose_file(self):
-        request_permissions1([Permission.WRITE_EXTERNAL_STORAGE,
+        a = request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
                              Permission.READ_EXTERNAL_STORAGE])
+        
+        print(a)
 
         LD = LoadDialog()
         LD.button = self.ids.file
